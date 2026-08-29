@@ -1,0 +1,10 @@
+{
+  "total_cases": 12,
+  "routing_accuracy": 1.0,
+  "tool_selection_accuracy": 1.0,
+  "argument_accuracy": 0.9583,
+  "agent_success_rate": 1.0,
+  "average_latency_ms": 5914.75,
+  "p95_latency_ms": 9643.63,
+  "average_tokens": 2307.83
+}

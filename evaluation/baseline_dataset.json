@@ -1,0 +1,126 @@
+[
+  {
+    "id": "B001",
+    "category": "general_knowledge",
+    "query": "什么是供应链风险？",
+    "expected_routing": "DIRECT_RESPONSE",
+    "expected_tool": null,
+    "expected_arguments": {}
+  },
+  {
+    "id": "B002",
+    "category": "supplier_lookup",
+    "query": "查询供应商 SUP-2026-0003 的信息",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "get_supplier",
+    "expected_arguments": {
+      "supplier_code": "SUP-2026-0003"
+    }
+  },
+  {
+    "id": "B003",
+    "category": "supplier_filter",
+    "query": "列出5个高风险供应商",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "list_suppliers",
+    "expected_arguments": {
+      "risk_level": "high",
+      "limit": 5
+    }
+  },
+  {
+    "id": "B004",
+    "category": "supplier_filter",
+    "query": "给我10个低风险供应商",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "list_suppliers",
+    "expected_arguments": {
+      "risk_level": "low",
+      "limit": 10
+    }
+  },
+  {
+    "id": "B005",
+    "category": "order_lookup",
+    "query": "查询采购订单 PO-2026-000001",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "get_purchase_order",
+    "expected_arguments": {
+      "order_number": "PO-2026-000001"
+    }
+  },
+  {
+    "id": "B006",
+    "category": "risk_order_search",
+    "query": "查询最近365天金额超过10万元、延期至少7天、供应商历史至少延期2次的高风险订单，最多返回5条",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "find_high_risk_orders",
+    "expected_arguments": {
+      "days": 365,
+      "min_amount": 100000,
+      "min_delay_days": 7,
+      "min_historical_delays": 2,
+      "limit": 5
+    }
+  },
+  {
+    "id": "B007",
+    "category": "risk_event",
+    "query": "查询最近20条高风险事件",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "list_risk_events",
+    "expected_arguments": {
+      "severity": "high",
+      "limit": 20
+    }
+  },
+  {
+    "id": "B008",
+    "category": "risk_event",
+    "query": "查询10条付款失败风险事件",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "list_risk_events",
+    "expected_arguments": {
+      "event_type": "payment_failure",
+      "limit": 10
+    }
+  },
+  {
+    "id": "B009",
+    "category": "general_knowledge",
+    "query": "采购订单是什么意思？",
+    "expected_routing": "DIRECT_RESPONSE",
+    "expected_tool": null,
+    "expected_arguments": {}
+  },
+  {
+    "id": "B010",
+    "category": "general_knowledge",
+    "query": "供应商评级通常有什么作用？",
+    "expected_routing": "DIRECT_RESPONSE",
+    "expected_tool": null,
+    "expected_arguments": {}
+  },
+  {
+    "id": "B011",
+    "category": "write_operation",
+    "query": "为风险事件1创建一个高优先级调查工单，标题为Investigate Risk，描述为Manual investigation required",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "create_risk_ticket",
+    "expected_arguments": {
+      "risk_event_id": 1,
+      "priority": "high"
+    },
+    "expected_status": "BLOCKED"
+  },
+  {
+    "id": "B012",
+    "category": "supplier_lookup",
+    "query": "SUP-2026-0007 的风险等级是多少？",
+    "expected_routing": "TOOL_CALL",
+    "expected_tool": "get_supplier",
+    "expected_arguments": {
+      "supplier_code": "SUP-2026-0007"
+    }
+  }
+]

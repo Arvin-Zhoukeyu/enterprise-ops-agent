@@ -1,0 +1,380 @@
+﻿id,category,query,expected_routing,actual_routing,routing_correct,expected_tool,actual_tool,tool_correct,expected_arguments,actual_arguments,argument_score,expected_status,actual_tool_status,status_correct,llm_calls,tool_calls,input_tokens,output_tokens,total_tokens,latency_ms,agent_success,answer,error
+B001,general_knowledge,什么是供应链风险？,DIRECT_RESPONSE,DIRECT_RESPONSE,True,,,True,{},{},1.0,,,True,1,0,839,470,1309,8111.065700009931,True,"供应链风险，指的是在原材料采购、生产、仓储、物流、销售等各个环节中，任何不确定因素导致供应中断、成本上升或服务水平下降的可能性。
+
+可以从几个维度来理解：
+
+1. 按来源划分  
+   - 上游风险：原材料短缺、供应商破产或停工、供应商交期严重延误、质量不稳定等。  
+   - 内部运营风险：生产设备故障、排产不合理、库存管理失误、信息系统故障、关键岗位人员流失。  
+   - 下游与市场风险：客户需求剧烈波动、订单取消或延后、渠道变动、需求预测偏差。  
+   - 外部环境风险：自然灾害、疫情、地缘政治冲突、政策监管变化、汇率和大宗商品价格波动等。
+
+2. 按影响结果划分  
+   - 供应中断风险：交不了货、断料停产、关键零部件缺失。  
+   - 成本风险：原材料涨价、物流成本大幅上升、加急费/违约金增加。  
+   - 质量与合规风险：产品质量事故、召回、环保或合规处罚。  
+   - 声誉与战略风险：交付失信、客户流失、品牌形象受损、长期合作关系破裂。
+
+3. 供应链风险管理的核心目标  
+   - 识别：看清哪些环节、哪些供应商、哪些地区存在高风险。  
+   - 评估：评估风险发生的概率和影响程度，划分优先级。  
+   - 应对：通过多供应商策略、安全库存、长期协议、应急预案、保险等手段降低风险。  
+   - 监控：持续跟踪交期、质量、库存、市场与政策变化，动态调整策略。
+
+如果你愿意，我可以结合你所在行业（例如制造业、零售、电商、医药等）具体说说常见的供应链风险类型和重点管控点。",
+B002,supplier_lookup,查询供应商 SUP-2026-0003 的信息,TOOL_CALL,TOOL_CALL,True,get_supplier,get_supplier,True,{'supplier_code': 'SUP-2026-0003'},{'supplier_code': 'SUP-2026-0003'},1.0,,SUCCESS,True,2,1,1798,198,1996,4548.39529999299,True,"以下为企业数据库中供应商 SUP-2026-0003 的信息（为企业事实数据）：
+
+- 供应商编码：SUP-2026-0003  
+- 名称：Mcclain, Miller and Henderson  
+- 国家/地区：马来西亚（Malaysia）  
+- 类别：电子（electronics）  
+- 综合评分：2.81（满分机制未在数据中提供，但该分值相对偏低）  
+- 风险等级：高风险（high）  
+- 合作年限：10 年  
+- 当前状态：在供（active）
+
+如果你需要，我可以进一步从风险视角分析该供应商（例如是否需要寻找替代供应商、如何制定风险缓释措施等）。",
+B003,supplier_filter,列出5个高风险供应商,TOOL_CALL,TOOL_CALL,True,list_suppliers,list_suppliers,True,"{'risk_level': 'high', 'limit': 5}","{'risk_level': 'high', 'limit': 5}",1.0,,SUCCESS,True,2,1,1947,248,2195,4979.696599999443,True,"以下为企业系统中当前标记为“高风险”的5个供应商（按系统返回顺序）：  
+
+1. SUP-2026-0001 — Rodriguez, Figueroa and Sanchez（国家/地区：China，风险评级：2.77）  
+2. SUP-2026-0002 — Doyle Ltd（国家/地区：New Zealand，风险评级：2.29）  
+3. SUP-2026-0003 — Mcclain, Miller and Henderson（国家/地区：Malaysia，风险评级：2.81）  
+4. SUP-2026-0004 — Davis and Sons（国家/地区：China，风险评级：2.51）  
+5. SUP-2026-0005 — Guzman, Hoffman and Baldwin（国家/地区：Malaysia，风险评级：2.28）  
+
+以上为企业数据库的实时数据。如需进一步查看某个供应商的风险明细（如历史延误、纠纷记录等），告诉我供应商编码即可。",
+B004,supplier_filter,给我10个低风险供应商,TOOL_CALL,TOOL_CALL,True,list_suppliers,list_suppliers,True,"{'risk_level': 'low', 'limit': 10}","{'risk_level': 'low', 'limit': 10}",1.0,,SUCCESS,True,2,1,2158,347,2505,5590.789099980611,True,"以下是当前企业系统中标记为“低风险”的 10 个供应商（按系统返回顺序）：
+
+1. SUP-2026-0031 - Burton Ltd（马来西亚），评级：4.26  
+2. SUP-2026-0032 - Carlson-Cruz（澳大利亚），评级：4.58  
+3. SUP-2026-0033 - Ferrell, Rice and Maddox（中国），评级：4.51  
+4. SUP-2026-0034 - Frazier Inc（越南），评级：4.11  
+5. SUP-2026-0035 - Dyer, Potter and Mack（马来西亚），评级：4.68  
+6. SUP-2026-0036 - Rodriguez-Graham（新加坡），评级：4.38  
+7. SUP-2026-0037 - Smith-Bowen（中国），评级：4.97  
+8. SUP-2026-0038 - Baker, Mason and White（马来西亚），评级：4.11  
+9. SUP-2026-0039 - Harrell LLC（中国），评级：4.64  
+10. SUP-2026-0040 - Romero, Gonzalez and Brooks（中国），评级：4.16  
+
+上述为企业数据库的实时数据。如需要，我可以进一步帮你筛选某个国家/评级区间或导出成一个候选清单模板（含联系人、合约要点字段等结构）。",
+B005,order_lookup,查询采购订单 PO-2026-000001,TOOL_CALL,TOOL_CALL,True,get_purchase_order,get_purchase_order,True,{'order_number': 'PO-2026-000001'},{'order_number': 'PO-2026-000001'},1.0,,SUCCESS,True,2,1,1797,163,1960,3893.6127000197303,True,"以下为企业系统中查询到的采购订单信息（来自企业数据库）：
+
+- 采购订单号：PO-2026-000001  
+- 供应商ID：14  
+- 订单金额：45,690.71 CNY  
+- 下单日期：2026-08-20  
+- 预计交货日期：2026-09-14  
+- 订单状态：completed（已完成）
+
+如果你需要进一步信息（例如供应商详情、明细行项目、交付/对账情况等），说明一下需要查哪些内容，我可以继续帮你查询和分析。",
+B006,risk_order_search,查询最近365天金额超过10万元、延期至少7天、供应商历史至少延期2次的高风险订单，最多返回5条,TOOL_CALL,TOOL_CALL,True,find_high_risk_orders,find_high_risk_orders,True,"{'days': 365, 'min_amount': 100000, 'min_delay_days': 7, 'min_historical_delays': 2, 'limit': 5}","{'days': 365, 'min_amount': '100000', 'min_delay_days': 7, 'min_historical_delays': 2, 'limit': 5}",1.0,,SUCCESS,True,2,1,2243,616,2859,6573.225900006946,True,"根据企业数据库查询结果，符合条件（最近365天、金额≥10万元、当前延期≥7天、供应商历史严重延期≥2次）的高风险订单共返回 5 条，具体如下：
+
+1. 订单号：PO-2026-002148  
+   - 供应商：Flowers, Martin and Kelly（编码：SUP-2026-0018）  
+   - 订单金额：760,374.10 CNY  
+   - 下单日期：2025-12-08  
+   - 当前延期天数：11 天  
+   - 历史严重延期次数：9 次  
+   - 系统当前风险等级：medium  
+
+2. 订单号：PO-2026-001976  
+   - 供应商：Gray-Mayo（编码：SUP-2026-0021）  
+   - 订单金额：705,797.54 CNY  
+   - 下单日期：2026-04-03  
+   - 当前延期天数：9 天  
+   - 历史严重延期次数：8 次  
+   - 系统当前风险等级：medium  
+
+3. 订单号：PO-2026-000268  
+   - 供应商：Henderson, Ramirez and Lewis（编码：SUP-2026-0008）  
+   - 订单金额：704,989.04 CNY  
+   - 下单日期：2025-09-26  
+   - 当前延期天数：22 天  
+   - 历史严重延期次数：31 次  
+   - 系统当前风险等级：high  
+
+4. 订单号：PO-2026-002134  
+   - 供应商：Dudley Group（编码：SUP-2026-0012）  
+   - 订单金额：641,202.47 CNY  
+   - 下单日期：2025-11-01  
+   - 当前延期天数：13 天  
+   - 历史严重延期次数：10 次  
+   - 系统当前风险等级：medium  
+
+5. 订单号：PO-2026-000545  
+   - 供应商：Guzman, Hoffman and Baldwin（编码：SUP-2026-0005）  
+   - 订单金额：569,104.18 CNY  
+   - 下单日期：2025-11-26  
+   - 当前延期天数：17 天  
+   - 历史严重延期次数：18 次  
+   - 系统当前风险等级：high  
+
+以上为系统实际查询到的订单信息，如需对其中某一订单做进一步风险分析或查看订单/供应商详情，我可以继续从数据库调取。",
+B007,risk_event,查询最近20条高风险事件,TOOL_CALL,TOOL_CALL,True,list_risk_events,list_risk_events,True,"{'severity': 'high', 'limit': 20}",{'limit': 20},0.5,,SUCCESS,True,2,1,3617,1006,4623,9643.626999983098,True,"以下为系统中最近 20 条风险事件（按时间倒序），均为企业数据库实时数据：
+
+1. ID 464｜中风险｜payment_failure  
+   - 订单：PO-2026-002991  
+   - 描述：该订单付款失败  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51Z  
+
+2. ID 463｜中风险｜delivery_delay  
+   - 订单：PO-2026-002989  
+   - 描述：延迟 12 天  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51Z  
+
+3. ID 462｜高风险｜delivery_delay  
+   - 订单：PO-2026-002986  
+   - 描述：延迟 19 天  
+   - 状态：open  
+
+4. ID 461｜高风险｜delivery_delay  
+   - 订单：PO-2026-002985  
+   - 描述：延迟 19 天  
+   - 状态：open  
+
+5. ID 460｜中风险｜delivery_delay  
+   - 订单：PO-2026-002977  
+   - 描述：延迟 7 天  
+   - 状态：open  
+
+6. ID 459｜高风险｜delivery_delay  
+   - 订单：PO-2026-002973  
+   - 描述：延迟 22 天  
+   - 状态：open  
+
+7. ID 458｜中风险｜delivery_delay  
+   - 订单：PO-2026-002964  
+   - 描述：延迟 9 天  
+   - 状态：open  
+
+8. ID 457｜高风险｜delivery_delay  
+   - 订单：PO-2026-002955  
+   - 描述：延迟 21 天  
+   - 状态：open  
+
+9. ID 456｜中风险｜payment_failure  
+   - 订单：PO-2026-002950  
+   - 描述：付款失败  
+   - 状态：open  
+
+10. ID 455｜高风险｜delivery_delay  
+    - 订单：PO-2026-002950  
+    - 描述：延迟 24 天  
+    - 状态：open  
+
+11. ID 454｜中风险｜payment_failure  
+    - 订单：PO-2026-002948  
+    - 描述：付款失败  
+    - 状态：open  
+
+12. ID 453｜中风险｜payment_failure  
+    - 订单：PO-2026-002946  
+    - 描述：付款失败  
+    - 状态：open  
+
+13. ID 452｜高风险｜delivery_delay  
+    - 订单：PO-2026-002946  
+    - 描述：延迟 30 天  
+    - 状态：open  
+
+14. ID 451｜高风险｜delivery_delay  
+    - 订单：PO-2026-002941  
+    - 描述：延迟 25 天  
+    - 状态：open  
+
+15. ID 450｜中风险｜delivery_delay  
+    - 订单：PO-2026-002938  
+    - 描述：延迟 8 天  
+    - 状态：open  
+
+16. ID 449｜中风险｜delivery_delay  
+    - 订单：PO-2026-002936  
+    - 描述：延迟 11 天  
+    - 状态：open  
+
+17. ID 448｜高风险｜delivery_delay  
+    - 订单：PO-2026-002907  
+    - 描述：延迟 16 天  
+    - 状态：open  
+
+18. ID 447｜中风险｜payment_failure  
+    - 订单：PO-2026-002897  
+    - 描述：付款失败  
+    - 状态：open  
+
+19. ID 446｜高风险｜delivery_delay  
+    - 订单：PO-2026-002897  
+    - 描述：延迟 30 天  
+    - 状态：open  
+
+20. ID 445｜中风险｜payment_failure  
+    - 订单：PO-2026-002885  
+    - 描述：付款失败  
+    - 状态：open  
+
+如果你需要，我可以按某种维度再做一个简要分析，例如：  
+- 按供应商聚合，找出重复出问题的供应商；  
+- 只筛选“高风险”事件；  
+- 针对其中某条事件直接生成调查工单。",
+B008,risk_event,查询10条付款失败风险事件,TOOL_CALL,TOOL_CALL,True,list_risk_events,list_risk_events,True,"{'event_type': 'payment_failure', 'limit': 10}","{'severity': None, 'event_type': 'payment_failure', 'limit': 10}",1.0,,SUCCESS,True,2,1,2655,1217,3872,10767.632099974435,True,"以下为企业数据库中最近检索到的 10 条“付款失败”风险事件（按系统返回顺序）：  
+
+1. 风险事件ID：464  
+   - 事件类型：payment_failure（付款失败）  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002991  
+   - 供应商ID：61  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51.453246+00:00  
+   - 描述：Payment failed for order PO-2026-002991.
+
+2. 风险事件ID：456  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002950  
+   - 供应商ID：9  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51.316775+00:00  
+   - 描述：Payment failed for order PO-2026-002950.
+
+3. 风险事件ID：454  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002948  
+   - 供应商ID：19  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51.309878+00:00  
+   - 描述：Payment failed for order PO-2026-002948.
+
+4. 风险事件ID：453  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002946  
+   - 供应商ID：2  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51.302726+00:00  
+   - 描述：Payment failed for order PO-2026-002946.
+
+5. 风险事件ID：447  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002897  
+   - 供应商ID：7  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51.138433+00:00  
+   - 描述：Payment failed for order PO-2026-002897.
+
+6. 风险事件ID：445  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002885  
+   - 供应商ID：5  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51.097785+00:00  
+   - 描述：Payment failed for order PO-2026-002885.
+
+7. 风险事件ID：443  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002869  
+   - 供应商ID：23  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:51.044743+00:00  
+   - 描述：Payment failed for order PO-2026-002869.
+
+8. 风险事件ID：431  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002810  
+   - 供应商ID：7  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:50.844639+00:00  
+   - 描述：Payment failed for order PO-2026-002810.
+
+9. 风险事件ID：429  
+   - 事件类型：payment_failure  
+   - 严重级别：medium  
+   - 风险评分：0.6  
+   - 关联采购订单：PO-2026-002802  
+   - 供应商ID：58  
+   - 状态：open  
+   - 发现时间：2026-08-27T06:46:50.817887+00:00  
+   - 描述：Payment failed for order PO-2026-002802.
+
+10. 风险事件ID：424  
+    - 事件类型：payment_failure  
+    - 严重级别：medium  
+    - 风险评分：0.6  
+    - 关联采购订单：PO-2026-002761  
+    - 供应商ID：8  
+    - 状态：open  
+    - 发现时间：2026-08-27T06:46:50.681350+00:00  
+    - 描述：Payment failed for order PO-2026-002761.
+
+如果你需要按供应商、严重等级或时间范围进一步筛选，我可以帮你做二次查询或分析。",
+B009,general_knowledge,采购订单是什么意思？,DIRECT_RESPONSE,DIRECT_RESPONSE,True,,,True,{},{},1.0,,,True,1,0,837,338,1175,4252.505100012058,True,"采购订单（Purchase Order，简称 PO）是企业在采购过程中，由采购方（买方）发给供应商（卖方）的**正式书面订单**，用来确认“向谁买、买什么、买多少、多少钱、什么时候交货”等关键条款的业务单据。
+
+通常包含的主要内容有：
+1. **基本信息**：采购订单号、日期、买方和供应商名称及联系方式等  
+2. **物料/服务信息**：物料名称、规格型号、数量、单位  
+3. **价格条款**：单价、总价、币种、税率及含税/未税说明  
+4. **交付条款**：交货日期、交货地点、运输方式、收货人  
+5. **结算条款**：付款方式（预付款、账期等）、发票要求、对账方式  
+6. **其他约定**：质量标准、验收方式、违约责任等
+
+在企业中的作用：
+- 是采购需求转化为**正式对外承诺**的依据  
+- 是供应商安排生产和发货的**指令**  
+- 是后续**收货、验收、入库、付款、对账**的依据  
+- 在发生纠纷时，是重要的**合同和法律凭证**（很多企业将采购订单视为简化形式的合同）
+
+如果你需要，我可以再用一个简单例子说明采购订单从“请购”到“付款”的完整流程。",
+B010,general_knowledge,供应商评级通常有什么作用？,DIRECT_RESPONSE,DIRECT_RESPONSE,True,,,True,{},{},1.0,,,True,1,0,840,525,1365,7432.341800013091,True,"供应商评级的常见作用主要有这些方面：
+
+1. **支持采购决策**
+   - 选择合作对象：优先与评级高、风险低的供应商合作或扩大合作额度。
+   - 减少试错成本：新项目或新地区采购时，直接参考评级，缩短调研周期。
+
+2. **风险管理与合规**
+   - 风险预警：通过财务状况、交付记录、合规风险等维度评级，提前识别高风险供应商（如易违约、易断供）。
+   - 合规审查：对涉及安全、环保、数据隐私等敏感领域的供应商设置最低评级门槛，降低法律与声誉风险。
+
+3. **供应商组合（Portfolio）优化**
+   - 结构调整：根据评级分布，决定哪些供应商应逐步替换、哪些应培育为核心供应商。
+   - 分散风险：避免关键物料全部集中在评级一般或波动大的供应商上。
+
+4. **价格与合同策略**
+   - 定价与信用条件：评级高的供应商，可给予更大采购量、更长账期；评级偏低的，则控制额度、缩短账期或增加担保。
+   - 合同条款：对低评级或关键高风险供应商设置更严格的服务水平协议（SLA）、违约责任和备份供应要求。
+
+5. **绩效管理与持续改进**
+   - 持续监控：通过定期更新评级，跟踪供应商表现（交付准时率、质量稳定性、响应速度等）。
+   - 改善沟通：将评级结果反馈给供应商，推动其在质量、交期、服务方面改进。
+
+6. **内部协同与透明度**
+   - 统一标准：为采购、质量、法务、财务等部门提供统一的供应商评价语言，减少主观判断。
+   - 决策可追溯：重大采购决策、供应商引入/淘汰时，有清晰的评级依据，便于内部审计和管理层复盘。
+
+如果你介绍一下你所在企业/行业（例如制造业、建筑、IT服务等）以及目前是否已经在做供应商评审，我可以帮你更具体地设计一套实用的评级用途和应用场景。",
+B011,write_operation,为风险事件1创建一个高优先级调查工单，标题为Investigate Risk，描述为Manual investigation required,TOOL_CALL,TOOL_CALL,True,create_risk_ticket,create_risk_ticket,True,"{'risk_event_id': 1, 'priority': 'high'}","{'risk_event_id': 1, 'title': 'Investigate Risk', 'description': 'Manual investigation required', 'priority': 'high'}",1.0,BLOCKED,BLOCKED,True,2,1,1797,169,1966,3024.008300009882,True,"我目前不能直接创建工单，因为创建风险调查工单属于“改变业务系统状态”的操作，系统要求必须由人工审批后执行。
+
+你可以参考以下信息在你的工单/风控系统中手工创建：
+
+- 风险事件ID：1  
+- 工单标题：Investigate Risk  
+- 优先级：high  
+- 描述：Manual investigation required  
+
+如果你告诉我你使用的是哪种系统（例如 Jira、ServiceNow、自研系统等），我可以按该系统的格式帮你生成更具体的创建步骤或模板内容。",
+B012,supplier_lookup,SUP-2026-0007 的风险等级是多少？,TOOL_CALL,TOOL_CALL,True,get_supplier,get_supplier,True,{'supplier_code': 'SUP-2026-0007'},{'supplier_code': 'SUP-2026-0007'},1.0,,SUCCESS,True,2,1,1796,73,1869,2160.1419000071473,True,"根据企业数据库记录：
+
+- 供应商 **SUP-2026-0007（Blake and Sons）** 的当前**风险等级为：高风险（high）**。",

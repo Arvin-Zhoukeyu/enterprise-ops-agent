@@ -1,20 +1,24 @@
 from functools import lru_cache
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import (
+    BaseSettings,
+    SettingsConfigDict,
+)
 
 
 class Settings(BaseSettings):
-    """
-    Central application configuration.
 
-    Values are loaded from environment variables or the .env file.
-    """
-
-    app_name: str = "EnterpriseOps Agent"
+    app_name: str = (
+        "EnterpriseOps Agent"
+    )
 
     database_url: str
 
     environment: str = "development"
+
+    openai_api_key: str | None = None
+
+    openai_model: str = "gpt-5.1"
 
     model_config = SettingsConfigDict(
         env_file=".env",
