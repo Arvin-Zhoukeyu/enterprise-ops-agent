@@ -1,0 +1,7 @@
+{
+  "total_cases": 7,
+  "agent_success_rate": 1.0,
+  "tool_selection_accuracy": 0.8571428571428571,
+  "average_latency_ms": 17933.796799991145,
+  "average_replans": 0.14285714285714285
+}

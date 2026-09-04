@@ -1,0 +1,15 @@
+Operational Risk Escalation Policy
+Version: 2026.1
+
+High-severity operational risks should be reviewed by a manager.
+
+Creating investigation tickets is considered a write operation.
+
+AI agents may prepare or recommend investigation tickets but must
+not execute state-changing business actions without approval.
+
+Risk analysis should distinguish observed business facts from
+inferred risk assessments.
+
+When available evidence is insufficient, the system should avoid
+making a definitive risk conclusion.

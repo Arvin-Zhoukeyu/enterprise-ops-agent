@@ -1,16 +1,87 @@
 services:
 
-  postgres:
-    image: postgres:16
+  api:
 
-    container_name: enterprise_ops_postgres
+    build:
+      context: .
 
-    restart: unless-stopped
+    container_name:
+      enterprise-agent-api
+
+    command:
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - .env
 
     environment:
-      POSTGRES_DB: enterprise_ops
-      POSTGRES_USER: enterprise_user
-      POSTGRES_PASSWORD: enterprise_password
+      DATABASE_URL:
+        postgresql+psycopg://postgres:postgres@postgres:5432/enterprise_ops
+
+      REDIS_URL:
+        redis://redis:6379/0
+
+    depends_on:
+      - postgres
+      - redis
+
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+
+
+  worker:
+
+    build:
+      context: .
+
+    container_name:
+      enterprise-agent-worker
+
+    command:
+      python -m scripts.run_worker
+
+    env_file:
+      - .env
+
+    environment:
+      DATABASE_URL:
+        postgresql+psycopg://postgres:postgres@postgres:5432/enterprise_ops
+
+      REDIS_URL:
+        redis://redis:6379/0
+
+    depends_on:
+      - postgres
+      - redis
+
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+
+
+  postgres:
+
+    image:
+      postgres:16
+
+    container_name:
+      enterprise-agent-db
+
+    environment:
+      POSTGRES_USER:
+        postgres
+
+      POSTGRES_PASSWORD:
+        postgres
+
+      POSTGRES_DB:
+        enterprise_ops
 
     ports:
       - "5432:5432"
@@ -18,16 +89,19 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-    healthcheck:
-      test:
-        [
-          "CMD-SHELL",
-          "pg_isready -U enterprise_user -d enterprise_ops"
-        ]
-      interval: 5s
-      timeout: 5s
-      retries: 5
+
+  redis:
+
+    image:
+      redis:7
+
+    container_name:
+      enterprise-agent-redis
+
+    ports:
+      - "6379:6379"
 
 
 volumes:
+
   postgres_data:

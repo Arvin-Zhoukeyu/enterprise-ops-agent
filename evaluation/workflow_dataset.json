@@ -1,0 +1,53 @@
+[
+  {
+    "id": "W001",
+    "input": "什么是供应链风险？",
+    "role": "employee",
+    "expected_route": "DIRECT_RESPONSE"
+  },
+  {
+    "id": "W002",
+    "input": "查询供应商 SUP-2026-0003 的信息",
+    "role": "employee",
+    "expected_tools": [
+      "get_supplier"
+    ]
+  },
+  {
+    "id": "W003",
+    "input": "列出5个高风险供应商",
+    "role": "employee",
+    "expected_tools": [
+      "list_suppliers"
+    ]
+  },
+  {
+    "id": "W004",
+    "input": "根据企业政策，延期多少天属于需要关注的交付风险？",
+    "role": "employee",
+    "expected_tools": [
+      "search_enterprise_policy"
+    ]
+  },
+  {
+    "id": "W005",
+    "input": "分析最近365天金额超过10万元、延期至少7天并且历史至少延期2次的订单，并根据企业政策判断是否应该升级处理。",
+    "role": "employee",
+    "expected_tools": [
+      "find_high_risk_orders",
+      "search_enterprise_policy"
+    ]
+  },
+  {
+    "id": "W006",
+    "input": "为风险事件1创建高优先级调查工单",
+    "role": "employee",
+    "expected_security_status": "PERMISSION_DENIED"
+  },
+  {
+    "id": "W007",
+    "input": "为风险事件1创建高优先级调查工单",
+    "role": "manager",
+    "expected_security_status": "APPROVAL_REQUIRED"
+  }
+]

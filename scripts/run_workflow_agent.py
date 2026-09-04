@@ -26,29 +26,87 @@ def main():
             "\nUser: "
         ).strip()
 
-        if not user_input:
-            continue
-
         if user_input.lower() in {
             "exit",
             "quit",
         }:
             break
 
+        role = input(
+            "Role "
+            "(employee/manager/admin): "
+        ).strip()
+
+        if not role:
+
+            role = "employee"
+
         try:
 
-            answer = agent.run(
-                user_input
+            response = agent.run(
+                user_input=user_input,
+                user_role=role,
+            )
+
+            thread_id = (
+                response[
+                    "thread_id"
+                ]
+            )
+
+            result = (
+                response["result"]
             )
 
             print(
-                f"\nAgent:\n{answer}"
+                f"\nThread ID: "
+                f"{thread_id}"
+            )
+
+            if (
+                "__interrupt__"
+                in result
+            ):
+
+                print(
+                    "\nApproval required."
+                )
+
+                decision = input(
+                    "Approve? "
+                    "(yes/no): "
+                ).strip().lower()
+
+                approved = (
+                    decision
+                    in {
+                        "yes",
+                        "y",
+                    }
+                )
+
+                result = agent.resume(
+                    thread_id=thread_id,
+                    approved=approved,
+                )
+
+            final_answer = (
+                result.get(
+                    "final_answer",
+                    ""
+                )
+            )
+
+            print(
+                f"\nAgent:\n"
+                f"{final_answer}"
             )
 
         except Exception as exc:
 
             print(
-                f"\nAgent Error:\n{exc}"
+                f"\nAgent Error:\n"
+                f"{exc}"
             )
 
 

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "W001",
+    "success": true,
+    "latency_ms": 8643.525499966927,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "verification_status": "",
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "W002",
+    "success": true,
+    "latency_ms": 10265.6426000176,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "verification_status": "PASS",
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "W003",
+    "success": true,
+    "latency_ms": 11485.152199980803,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "verification_status": "PASS",
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "W004",
+    "success": true,
+    "latency_ms": 4921.721199993044,
+    "expected_tools": [
+      "search_enterprise_policy"
+    ],
+    "actual_tools": [],
+    "tool_match": false,
+    "verification_status": "",
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "W005",
+    "success": true,
+    "latency_ms": 70768.57829990331,
+    "expected_tools": [
+      "find_high_risk_orders",
+      "search_enterprise_policy"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders",
+      "search_enterprise_policy"
+    ],
+    "tool_match": true,
+    "verification_status": "PASS",
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "W006",
+    "success": true,
+    "latency_ms": 15901.474100071937,
+    "expected_tools": [],
+    "actual_tools": [
+      "create_risk_ticket",
+      "search_enterprise_policy"
+    ],
+    "tool_match": true,
+    "verification_status": "PASS",
+    "replan_count": 1,
+    "error": null
+  },
+  {
+    "id": "W007",
+    "success": true,
+    "latency_ms": 3550.4837000044063,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "verification_status": "",
+    "replan_count": 0,
+    "error": null
+  }
+]

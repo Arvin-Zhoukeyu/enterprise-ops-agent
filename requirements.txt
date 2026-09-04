@@ -12,3 +12,13 @@ httpx>=0.27
 openai>=2.0
 langgraph
 langchain-core
+langchain-openai
+langchain-chroma
+langchain-text-splitters
+chromadb
+rank-bm25
+pypdf
+redis
+rq
+prometheus-client
+python-json-logger

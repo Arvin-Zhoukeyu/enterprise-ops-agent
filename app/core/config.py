@@ -26,6 +26,9 @@ class Settings(BaseSettings):
         case_sensitive=False,
         extra="ignore",
     )
+    redis_url: str = (
+        "redis://localhost:6379/0"
+    )
 
 
 @lru_cache

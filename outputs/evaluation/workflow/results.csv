@@ -1,0 +1,8 @@
+﻿id,success,latency_ms,expected_tools,actual_tools,tool_match,verification_status,replan_count,error
+W001,True,8643.525499966927,[],[],True,,0,
+W002,True,10265.6426000176,['get_supplier'],['get_supplier'],True,PASS,0,
+W003,True,11485.152199980803,['list_suppliers'],['list_suppliers'],True,PASS,0,
+W004,True,4921.721199993044,['search_enterprise_policy'],[],False,,0,
+W005,True,70768.57829990331,"['find_high_risk_orders', 'search_enterprise_policy']","['find_high_risk_orders', 'search_enterprise_policy']",True,PASS,0,
+W006,True,15901.474100071937,[],"['create_risk_ticket', 'search_enterprise_policy']",True,PASS,1,
+W007,True,3550.4837000044063,[],[],True,,0,

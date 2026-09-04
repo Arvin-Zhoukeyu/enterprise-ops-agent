@@ -16,6 +16,12 @@ from app.tools import (
     load_tools,
     tool_registry,
 )
+from app.security.permissions import (
+    has_permission,
+)
+from langgraph.types import (
+    interrupt,
+)
 
 
 client = OpenAI(
@@ -290,26 +296,126 @@ def tool_executor_node(
             tool_name
         )
 
-        if tool.side_effect:
+    except Exception as exc:
 
-            result = {
-                "success": False,
-                "error":
-                    "approval_required",
-            }
+        observations.append(
+            {
+                "step":
+                    current_step,
 
-            status = "BLOCKED"
-
-        else:
-
-            result = (
-                tool_registry.execute(
+                "tool":
                     tool_name,
-                    arguments,
-                )
-            )
 
-            status = "SUCCESS"
+                "status":
+                    "FAILED",
+
+                "result": {
+                    "error":
+                        str(exc)
+                },
+            }
+        )
+
+        return {
+            "observations":
+                observations,
+
+            "current_step":
+                current_step + 1,
+        }
+
+    #
+    # RBAC
+    #
+
+    if not has_permission(
+        state["user_role"],
+        tool.permission,
+    ):
+
+        result = {
+            "success": False,
+
+            "error":
+                "permission_denied",
+
+            "required_permission":
+                tool.permission,
+
+            "user_role":
+                state[
+                    "user_role"
+                ],
+        }
+
+        observations.append(
+            {
+                "step":
+                    current_step,
+
+                "tool":
+                    tool_name,
+
+                "arguments":
+                    arguments,
+
+                "status":
+                    "PERMISSION_DENIED",
+
+                "result":
+                    result,
+            }
+        )
+
+        return {
+            "observations":
+                observations,
+
+            "current_step":
+                current_step + 1,
+        }
+
+    #
+    # Write Tool
+    #
+
+    if tool.side_effect:
+
+        print(
+            "[Executor] "
+            "Human approval required."
+        )
+
+        return {
+            "pending_action": {
+                "tool":
+                    tool_name,
+
+                "arguments":
+                    arguments,
+
+                "step":
+                    current_step,
+            },
+
+            "approval_status":
+                "PENDING",
+        }
+
+    #
+    # Read Tool
+    #
+
+    try:
+
+        result = (
+            tool_registry.execute(
+                tool_name,
+                arguments,
+            )
+        )
+
+        status = "SUCCESS"
 
     except Exception as exc:
 
@@ -598,4 +704,174 @@ Rules:
     return {
         "final_answer":
             response.output_text
+    }
+
+def approval_node(
+    state: AgentState,
+) -> dict:
+
+    pending = (
+        state["pending_action"]
+    )
+
+    if pending is None:
+
+        return {
+            "approval_status":
+                "NOT_REQUIRED"
+        }
+
+    decision = interrupt(
+        {
+            "type":
+                "approval_required",
+
+            "message":
+                "A write operation requires "
+                "human approval.",
+
+            "tool":
+                pending["tool"],
+
+            "arguments":
+                pending[
+                    "arguments"
+                ],
+
+            "user_role":
+                state[
+                    "user_role"
+                ],
+        }
+    )
+
+    approved = (
+        decision.get(
+            "approved",
+            False,
+        )
+    )
+
+    if not approved:
+
+        return {
+            "approval_status":
+                "REJECTED"
+        }
+
+    return {
+        "approval_status":
+            "APPROVED"
+    }
+
+def execute_approved_action_node(
+    state: AgentState,
+) -> dict:
+
+    pending = (
+        state["pending_action"]
+    )
+
+    observations = list(
+        state["observations"]
+    )
+
+    if pending is None:
+
+        return {
+            "observations":
+                observations
+        }
+
+    if (
+        state["approval_status"]
+        != "APPROVED"
+    ):
+
+        observations.append(
+            {
+                "tool":
+                    pending["tool"],
+
+                "arguments":
+                    pending[
+                        "arguments"
+                    ],
+
+                "status":
+                    "REJECTED",
+
+                "result": {
+                    "success":
+                        False,
+
+                    "error":
+                        "human_rejected",
+                },
+            }
+        )
+
+        return {
+            "observations":
+                observations,
+
+            "pending_action":
+                None,
+
+            "current_step":
+                state[
+                    "current_step"
+                ] + 1,
+        }
+
+    try:
+
+        result = (
+            tool_registry.execute(
+                pending["tool"],
+                pending["arguments"],
+            )
+        )
+
+        status = "SUCCESS"
+
+    except Exception as exc:
+
+        result = {
+            "success": False,
+            "error":
+                str(exc),
+        }
+
+        status = "FAILED"
+
+    observations.append(
+        {
+            "tool":
+                pending["tool"],
+
+            "arguments":
+                pending[
+                    "arguments"
+                ],
+
+            "status":
+                status,
+
+            "result":
+                result,
+        }
+    )
+
+    return {
+        "observations":
+            observations,
+
+        "pending_action":
+            None,
+
+        "current_step":
+            state[
+                "current_step"
+            ] + 1,
     }

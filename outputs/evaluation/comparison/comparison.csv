@@ -1,0 +1,4 @@
+﻿metric,Baseline,Workflow
+Agent Success Rate,1.0,1.0
+Tool Selection Accuracy,1.0,0.8571428571428571
+Average Latency (ms),5914.75,17933.796799991145

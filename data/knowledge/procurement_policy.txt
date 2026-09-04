@@ -1,0 +1,12 @@
+Enterprise Procurement Policy
+Version: 2026.1
+
+1. Purchase orders with a value greater than CNY 100,000 are considered high-value purchases.
+
+2. High-value purchases require additional procurement risk review when delivery delay exceeds 7 days.
+
+3. Purchase orders exceeding CNY 500,000 require procurement manager review.
+
+4. Suppliers with repeated delivery issues should receive increased monitoring.
+
+5. Business actions that modify procurement records require authorized personnel approval.

@@ -9,6 +9,7 @@ def load_tools() -> None:
     import app.tools.risk_tools
     import app.tools.supplier_tools
     import app.tools.ticket_tools
+    import app.tools.knowledge_tools
 
 
 __all__ = [

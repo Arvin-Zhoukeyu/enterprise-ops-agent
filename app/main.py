@@ -1,35 +1,33 @@
 from fastapi import FastAPI
 
-from app.api.v1.router import (
-    api_router,
+from app.api.agent import (
+    router as agent_router,
 )
-from app.core.config import settings
+from app.api.health import (
+    router as health_router,
+)
+from app.observability.logging import (
+    configure_logging,
+)
+
+
+configure_logging()
 
 
 app = FastAPI(
-    title=settings.app_name,
-    version="0.1.0",
+    title="EnterpriseOps Agent",
+    version="1.0.0",
     description=(
-        "Enterprise procurement and "
-        "operations backend service."
+        "Production-oriented enterprise "
+        "operations AI agent."
     ),
 )
 
 
 app.include_router(
-    api_router,
-    prefix="/api/v1",
+    health_router
 )
 
-
-@app.get("/")
-def root():
-
-    return {
-        "service": settings.app_name,
-        "message": (
-            "EnterpriseOps Agent "
-            "backend is running."
-        ),
-        "docs": "/docs",
-    }
+app.include_router(
+    agent_router
+)

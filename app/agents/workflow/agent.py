@@ -1,3 +1,9 @@
+import uuid
+
+from langgraph.types import (
+    Command,
+)
+
 from app.agents.workflow.graph import (
     build_agent_graph,
 )
@@ -16,11 +22,26 @@ class WorkflowAgent:
     def run(
         self,
         user_input: str,
-    ) -> str:
+        user_role: str = "employee",
+        thread_id: str | None = None,
+    ):
+
+        if thread_id is None:
+
+            thread_id = str(
+                uuid.uuid4()
+            )
 
         initial_state = {
+
             "user_input":
                 user_input,
+
+            "user_role":
+                user_role,
+
+            "thread_id":
+                thread_id,
 
             "intent":
                 "",
@@ -46,6 +67,12 @@ class WorkflowAgent:
             "replan_count":
                 0,
 
+            "pending_action":
+                None,
+
+            "approval_status":
+                "",
+
             "final_answer":
                 "",
 
@@ -53,12 +80,51 @@ class WorkflowAgent:
                 None,
         }
 
+        config = {
+            "configurable": {
+                "thread_id":
+                    thread_id
+            }
+        }
+
         result = self.graph.invoke(
-            initial_state
+            initial_state,
+            config=config,
         )
 
         self.last_state = result
 
-        return result[
-            "final_answer"
-        ]
+        return {
+            "thread_id":
+                thread_id,
+
+            "result":
+                result,
+        }
+
+    def resume(
+        self,
+        thread_id: str,
+        approved: bool,
+    ):
+
+        config = {
+            "configurable": {
+                "thread_id":
+                    thread_id
+            }
+        }
+
+        result = self.graph.invoke(
+            Command(
+                resume={
+                    "approved":
+                        approved
+                }
+            ),
+            config=config,
+        )
+
+        self.last_state = result
+
+        return result

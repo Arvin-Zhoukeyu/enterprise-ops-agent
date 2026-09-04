@@ -1,0 +1,16 @@
+Supplier Risk Management Policy
+Version: 2026.1
+
+Supplier risk should be assessed using delivery performance,
+payment incidents, historical risk events and supplier ratings.
+
+A supplier should be considered elevated risk when two or more
+serious delivery delays occur within a six-month period.
+
+A delivery delay of 7 days or more is considered material.
+
+A delivery delay of 15 days or more should be treated as a
+high-severity delivery incident.
+
+Suppliers with repeated material delays should be escalated for
+manual procurement review.
