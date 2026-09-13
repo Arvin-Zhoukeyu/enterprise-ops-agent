@@ -1,0 +1,102 @@
+{
+  "dataset": {
+    "path": "evaluation/dataset.json",
+    "unique_cases": 110,
+    "common_cases": 60,
+    "workflow_extension_cases": 30,
+    "rag_cases": 20,
+    "source": "synthetic"
+  },
+  "baseline_common": {
+    "total_cases": 60,
+    "routing_accuracy": 1.0,
+    "tool_selection_accuracy": 1.0,
+    "argument_accuracy": 0.9967,
+    "agent_success_rate": 1.0,
+    "task_completion_accuracy": 0.9833,
+    "status_accuracy": 1.0,
+    "average_latency_ms": 6107.5,
+    "p50_latency_ms": 4662.12,
+    "p95_latency_ms": 12944.95,
+    "average_tokens": 2476,
+    "average_llm_calls": 1.87,
+    "average_tool_calls": 0.87,
+    "category_task_accuracy": {
+      "general_knowledge": 1.0,
+      "order_lookup": 1.0,
+      "risk_event": 1.0,
+      "risk_order_search": 0.8889,
+      "supplier_filter": 1.0,
+      "supplier_lookup": 1.0,
+      "write_operation": 1.0
+    }
+  },
+  "workflow_common": {
+    "total_cases": 60,
+    "execution_success_rate": 1,
+    "agent_success_rate": 1,
+    "task_completion_accuracy": 0.95,
+    "routing_accuracy": 0.9667,
+    "exact_tool_sequence_accuracy": 0.95,
+    "tool_precision": 0.9583,
+    "tool_recall": 0.9667,
+    "tool_f1": 0.9611,
+    "security_control_accuracy": 1,
+    "average_latency_ms": 7909.34,
+    "p50_latency_ms": 7042.01,
+    "p95_latency_ms": 14956.46,
+    "average_replans": 0.0667,
+    "category_task_accuracy": {
+      "general_knowledge": 1,
+      "order_lookup": 1,
+      "risk_event": 0.7,
+      "risk_order_search": 1,
+      "supplier_filter": 1,
+      "supplier_lookup": 1,
+      "write_operation": 1
+    }
+  },
+  "common_comparison": {
+    "task_completion_delta": -0.0333,
+    "routing_accuracy_delta": -0.0333,
+    "average_latency_delta_ms": 1801.84
+  },
+  "workflow_extension": {
+    "total_cases": 30,
+    "execution_success_rate": 1,
+    "agent_success_rate": 1,
+    "task_completion_accuracy": 0.6667,
+    "routing_accuracy": 0.8,
+    "exact_tool_sequence_accuracy": 0.6667,
+    "tool_precision": 0.7389,
+    "tool_recall": 0.8,
+    "tool_f1": 0.76,
+    "security_control_accuracy": 1,
+    "average_latency_ms": 15049.84,
+    "p50_latency_ms": 10092.62,
+    "p95_latency_ms": 37817.24,
+    "average_replans": 0.2,
+    "category_task_accuracy": {
+      "approval": 1,
+      "general": 1,
+      "multi_step": 0.7143,
+      "order": 1,
+      "policy_rag": 0,
+      "rbac": 0,
+      "risk": 1,
+      "supplier": 1
+    }
+  },
+  "rag": {
+    "total_cases": 20,
+    "top_k": 2,
+    "hit_at_1": 0.95,
+    "hit_at_2": 0.95,
+    "recall_at_2": 0.95,
+    "mrr_at_2": 0.95,
+    "average_latency_ms": 230.86,
+    "p50_latency_ms": 205.19,
+    "p95_latency_ms": 315.5,
+    "error_rate": 0
+  }
+}

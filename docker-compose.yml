@@ -20,8 +20,8 @@ services:
       - .env
 
     environment:
-      DATABASE_URL:
-        postgresql+psycopg://postgres:postgres@postgres:5432/enterprise_ops
+      DATABASE_HOST_OVERRIDE:
+        postgres
 
       REDIS_URL:
         redis://redis:6379/0
@@ -50,8 +50,8 @@ services:
       - .env
 
     environment:
-      DATABASE_URL:
-        postgresql+psycopg://postgres:postgres@postgres:5432/enterprise_ops
+      DATABASE_HOST_OVERRIDE:
+        postgres
 
       REDIS_URL:
         redis://redis:6379/0
@@ -75,13 +75,13 @@ services:
 
     environment:
       POSTGRES_USER:
-        postgres
+        ${POSTGRES_USER:-postgres}
 
       POSTGRES_PASSWORD:
-        postgres
+        ${POSTGRES_PASSWORD:-postgres}
 
       POSTGRES_DB:
-        enterprise_ops
+        ${POSTGRES_DB:-enterprise_ops}
 
     ports:
       - "5432:5432"

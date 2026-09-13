@@ -154,3 +154,35 @@ flowchart TD
     OBS --> LOG[Structured Logs]
     OBS --> MET[Prometheus Metrics]
     OBS --> TRACE[Agent Traces]
+```
+
+---
+
+## Evaluation
+
+All evaluation labels live in one synthetic benchmark file:
+`evaluation/dataset.json`. The benchmark contains 110 unique cases:
+
+- 60 common cases executed by both Baseline and Workflow for a fair comparison
+- 30 Workflow extension cases covering multi-tool, RBAC and approval behavior
+- 20 policy retrieval cases with expected source documents
+
+Rebuild the unified dataset after editing its generator:
+
+```bash
+python -m evaluation.build_synthetic_datasets
+```
+
+Run the complete benchmark with one command:
+
+```bash
+python -m scripts.run_evaluation
+```
+
+The command prints all metrics to the terminal and writes the consolidated
+report to `outputs/evaluation/summary.json`. Detailed results are grouped under
+the same output directory. Metrics include strict task completion, routing,
+exact tool sequence, argument matching, tool precision/recall/F1,
+security-control accuracy, RAG Hit@K/MRR/Recall@K, latency percentiles and model
+usage. Synthetic labels are expected results; all reported scores come from
+actual evaluator runs.

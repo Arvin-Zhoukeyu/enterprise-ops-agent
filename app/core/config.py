@@ -4,6 +4,8 @@ from pydantic_settings import (
     BaseSettings,
     SettingsConfigDict,
 )
+from pydantic import model_validator
+from sqlalchemy.engine import make_url
 
 
 class Settings(BaseSettings):
@@ -13,6 +15,8 @@ class Settings(BaseSettings):
     )
 
     database_url: str
+
+    database_host_override: str | None = None
 
     environment: str = "development"
 
@@ -29,6 +33,17 @@ class Settings(BaseSettings):
     redis_url: str = (
         "redis://localhost:6379/0"
     )
+
+    @model_validator(mode="after")
+    def apply_database_host_override(self):
+        if self.database_host_override:
+            url = make_url(self.database_url).set(
+                host=self.database_host_override
+            )
+            self.database_url = url.render_as_string(
+                hide_password=False
+            )
+        return self
 
 
 @lru_cache

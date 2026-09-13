@@ -1,0 +1,25 @@
+{
+  "total_cases": 60,
+  "execution_success_rate": 1,
+  "agent_success_rate": 1,
+  "task_completion_accuracy": 0.95,
+  "routing_accuracy": 0.9667,
+  "exact_tool_sequence_accuracy": 0.95,
+  "tool_precision": 0.9583,
+  "tool_recall": 0.9667,
+  "tool_f1": 0.9611,
+  "security_control_accuracy": 1,
+  "average_latency_ms": 7909.34,
+  "p50_latency_ms": 7042.01,
+  "p95_latency_ms": 14956.46,
+  "average_replans": 0.0667,
+  "category_task_accuracy": {
+    "general_knowledge": 1,
+    "order_lookup": 1,
+    "risk_event": 0.7,
+    "risk_order_search": 1,
+    "supplier_filter": 1,
+    "supplier_lookup": 1,
+    "write_operation": 1
+  }
+}

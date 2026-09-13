@@ -1,0 +1,26 @@
+{
+  "total_cases": 30,
+  "execution_success_rate": 1,
+  "agent_success_rate": 1,
+  "task_completion_accuracy": 0.6667,
+  "routing_accuracy": 0.8,
+  "exact_tool_sequence_accuracy": 0.6667,
+  "tool_precision": 0.7389,
+  "tool_recall": 0.8,
+  "tool_f1": 0.76,
+  "security_control_accuracy": 1,
+  "average_latency_ms": 15049.84,
+  "p50_latency_ms": 10092.62,
+  "p95_latency_ms": 37817.24,
+  "average_replans": 0.2,
+  "category_task_accuracy": {
+    "approval": 1,
+    "general": 1,
+    "multi_step": 0.7143,
+    "order": 1,
+    "policy_rag": 0,
+    "rbac": 0,
+    "risk": 1,
+    "supplier": 1
+  }
+}

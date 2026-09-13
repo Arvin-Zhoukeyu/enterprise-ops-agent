@@ -1,0 +1,1587 @@
+[
+  {
+    "id": "EB001",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7306.492540999954,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB002",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 11277.844721999998,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB003",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7417.3888870000155,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB004",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7589.824051999984,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB005",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 8461.353240000051,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB006",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 9908.778616999996,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB007",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 13051.652710999973,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB008",
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7397.502164999992,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB009",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 8537.731891000021,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB010",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7039.463904999991,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB011",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 4901.450684999986,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB012",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 4777.263017999985,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB013",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5566.069524999989,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB014",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7638.679400000001,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB015",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 4813.8487689999465,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB016",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6094.8541399999385,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB017",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5526.410956999939,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB018",
+    "category": "supplier_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5646.858718999965,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_supplier"
+    ],
+    "actual_tools": [
+      "get_supplier"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB019",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6591.9642300000305,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB020",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7956.140837999897,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB021",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 9123.000178999973,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB022",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6213.544994000017,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB023",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 9763.405018999947,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB024",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 9461.217711000018,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB025",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6627.12825199992,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB026",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6657.159129000092,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB027",
+    "category": "supplier_filter",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6399.950654000008,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_suppliers"
+    ],
+    "actual_tools": [
+      "list_suppliers"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB028",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5725.219680000009,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB029",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 13247.11674499997,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 2,
+    "error": null
+  },
+  {
+    "id": "EB030",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 4887.194951999959,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB031",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6432.96653799996,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB032",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5477.063863000012,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB033",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5755.140608000033,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB034",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5290.197092999961,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB035",
+    "category": "order_lookup",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6649.073143999999,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "get_purchase_order"
+    ],
+    "actual_tools": [
+      "get_purchase_order"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB036",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 15543.55186600003,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB037",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": false,
+    "latency_ms": 8309.09391900002,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": false,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [],
+    "tool_match": false,
+    "tool_precision": 0.0,
+    "tool_recall": 0.0,
+    "tool_f1": 0.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": false,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB038",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6661.816657000031,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB039",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 10810.47424999997,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB040",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": false,
+    "latency_ms": 14956.46431099999,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": false,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [],
+    "tool_match": false,
+    "tool_precision": 0.0,
+    "tool_recall": 0.0,
+    "tool_f1": 0.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": false,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB041",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6111.317460999999,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB042",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": false,
+    "latency_ms": 15328.738778000003,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events",
+      "find_high_risk_orders"
+    ],
+    "tool_match": false,
+    "tool_precision": 0.5,
+    "tool_recall": 1.0,
+    "tool_f1": 0.6666666666666666,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "FAIL",
+    "verification_correct": false,
+    "replan_count": 2,
+    "error": null
+  },
+  {
+    "id": "EB043",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6437.144749000026,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB044",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 10741.866665999965,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB045",
+    "category": "risk_event",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 23310.14066600005,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "list_risk_events"
+    ],
+    "actual_tools": [
+      "list_risk_events"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB046",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 9124.840247999942,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB047",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 10874.630980000005,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB048",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 11700.25671899998,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB049",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 7044.550404000006,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB050",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 9261.284814999954,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB051",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 8478.09182000003,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB052",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 8919.318266999995,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB053",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 6239.6391300000005,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB054",
+    "category": "risk_order_search",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 11295.989959000053,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "find_high_risk_orders"
+    ],
+    "actual_tools": [
+      "find_high_risk_orders"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "PASS",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB055",
+    "category": "write_operation",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 3187.8483579999966,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "create_risk_ticket"
+    ],
+    "actual_tools": [
+      "create_risk_ticket"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": "APPROVAL_REQUIRED",
+    "actual_security_status": "APPROVAL_REQUIRED",
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB056",
+    "category": "write_operation",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 3373.033052999972,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "create_risk_ticket"
+    ],
+    "actual_tools": [
+      "create_risk_ticket"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": "APPROVAL_REQUIRED",
+    "actual_security_status": "APPROVAL_REQUIRED",
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB057",
+    "category": "write_operation",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 2446.099664999906,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "create_risk_ticket"
+    ],
+    "actual_tools": [
+      "create_risk_ticket"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": "APPROVAL_REQUIRED",
+    "actual_security_status": "APPROVAL_REQUIRED",
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB058",
+    "category": "write_operation",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 3260.620997999922,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "create_risk_ticket"
+    ],
+    "actual_tools": [
+      "create_risk_ticket"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": "APPROVAL_REQUIRED",
+    "actual_security_status": "APPROVAL_REQUIRED",
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB059",
+    "category": "write_operation",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 2925.686294000002,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "create_risk_ticket"
+    ],
+    "actual_tools": [
+      "create_risk_ticket"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": "APPROVAL_REQUIRED",
+    "actual_security_status": "APPROVAL_REQUIRED",
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  },
+  {
+    "id": "EB060",
+    "category": "write_operation",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 3006.650299999933,
+    "expected_route": "TOOL_CALL",
+    "actual_route": "TOOL_CALL",
+    "route_correct": true,
+    "expected_tools": [
+      "create_risk_ticket"
+    ],
+    "actual_tools": [
+      "create_risk_ticket"
+    ],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": "APPROVAL_REQUIRED",
+    "actual_security_status": "APPROVAL_REQUIRED",
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  }
+]

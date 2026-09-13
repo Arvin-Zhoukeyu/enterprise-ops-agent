@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from statistics import mean
+from statistics import mean, median
 from typing import Any
 
 import pandas as pd
@@ -19,8 +19,9 @@ class BaselineEvaluator:
         self,
         dataset_path: str = (
             "evaluation/"
-            "baseline_dataset.json"
+            "dataset.json"
         ),
+        dataset_section: str = "common_agent_cases",
         output_dir: str = (
             "outputs/evaluation/baseline"
         ),
@@ -29,6 +30,8 @@ class BaselineEvaluator:
         self.dataset_path = Path(
             dataset_path
         )
+
+        self.dataset_section = dataset_section
 
         self.output_dir = Path(
             output_dir
@@ -52,7 +55,12 @@ class BaselineEvaluator:
             encoding="utf-8",
         ) as file:
 
-            return json.load(file)
+            dataset = json.load(file)
+
+        if isinstance(dataset, list):
+            return dataset
+
+        return dataset[self.dataset_section]
 
     def run(self):
 
@@ -279,6 +287,14 @@ class BaselineEvaluator:
             "status_correct":
                 status_correct,
 
+            "task_correct": (
+                trace.success
+                and routing_correct
+                and tool_correct
+                and argument_score == 1.0
+                and status_correct
+            ),
+
             "llm_calls":
                 trace.llm_calls,
 
@@ -411,6 +427,22 @@ class BaselineEvaluator:
             / total
         )
 
+        task_accuracy = (
+            sum(
+                result["task_correct"]
+                for result in results
+            )
+            / total
+        )
+
+        status_accuracy = (
+            sum(
+                result["status_correct"]
+                for result in results
+            )
+            / total
+        )
+
         average_latency = mean(
             result[
                 "latency_ms"
@@ -447,6 +479,27 @@ class BaselineEvaluator:
             ]
         )
 
+        categories = sorted({
+            result["category"]
+            for result in results
+        })
+
+        category_accuracy = {}
+        for category in categories:
+            category_results = [
+                result
+                for result in results
+                if result["category"] == category
+            ]
+            category_accuracy[category] = round(
+                sum(
+                    result["task_correct"]
+                    for result in category_results
+                )
+                / len(category_results),
+                4,
+            )
+
         return {
             "total_cases":
                 total,
@@ -475,11 +528,20 @@ class BaselineEvaluator:
                     4,
                 ),
 
+            "task_completion_accuracy":
+                round(task_accuracy, 4),
+
+            "status_accuracy":
+                round(status_accuracy, 4),
+
             "average_latency_ms":
                 round(
                     average_latency,
                     2,
                 ),
+
+            "p50_latency_ms":
+                round(median(sorted_latencies), 2),
 
             "p95_latency_ms":
                 round(
@@ -492,6 +554,27 @@ class BaselineEvaluator:
                     average_tokens,
                     2,
                 ),
+
+            "average_llm_calls":
+                round(
+                    mean(
+                        result["llm_calls"]
+                        for result in results
+                    ),
+                    2,
+                ),
+
+            "average_tool_calls":
+                round(
+                    mean(
+                        result["tool_calls"]
+                        for result in results
+                    ),
+                    2,
+                ),
+
+            "category_task_accuracy":
+                category_accuracy,
         }
 
     def print_summary(
