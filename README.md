@@ -29,6 +29,30 @@ The agent can:
 
 The project uses synthetic enterprise data and policies for demonstration purposes.
 
+## Model Provider
+
+The agent uses Alibaba Cloud Model Studio (Bailian) through its OpenAI-compatible
+API. Chat, function calling and RAG embeddings share the same API credential.
+
+Configure these values in `.env`:
+
+```bash
+DASHSCOPE_API_KEY=your-bailian-api-key
+DASHSCOPE_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+DASHSCOPE_CHAT_MODEL=qwen-plus
+DASHSCOPE_EMBEDDING_MODEL=text-embedding-v4
+DASHSCOPE_EMBEDDING_DIMENSIONS=1024
+VECTOR_COLLECTION_NAME=enterprise_policy_bailian_v4
+```
+
+For a dedicated Bailian workspace, replace `DASHSCOPE_BASE_URL` with the
+workspace-specific compatible endpoint shown in the Bailian console. After
+changing the embedding model or collection name, rebuild the knowledge base:
+
+```bash
+docker compose run --rm api python -m scripts.build_knowledge_base
+```
+
 ---
 
 ## Motivation

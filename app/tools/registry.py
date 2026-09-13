@@ -90,7 +90,7 @@ class ToolRegistry:
             **validated.model_dump()
         )
 
-    def to_openai_tools(
+    def to_chat_completion_tools(
             self,
     ) -> list[dict]:
 
@@ -105,16 +105,13 @@ class ToolRegistry:
             tools.append(
                 {
                     "type": "function",
-
-                    "name": tool.name,
-
-                    "description":
-                        tool.description,
-
-                    "parameters":
-                        parameters,
-
-                    "strict": False,
+                    "function": {
+                        "name": tool.name,
+                        "description":
+                            tool.description,
+                        "parameters":
+                            parameters,
+                    },
                 }
             )
 

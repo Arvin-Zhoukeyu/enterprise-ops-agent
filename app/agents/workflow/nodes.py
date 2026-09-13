@@ -1,8 +1,6 @@
 import json
 from typing import Any
 
-from openai import OpenAI
-
 from app.agents.workflow.schemas import (
     AgentPlan,
     RouteDecision,
@@ -12,6 +10,11 @@ from app.agents.workflow.state import (
     AgentState,
 )
 from app.core.config import settings
+from app.llm import (
+    create_bailian_client,
+    get_chat_text,
+    parse_json_object,
+)
 from app.tools import (
     load_tools,
     tool_registry,
@@ -24,11 +27,22 @@ from langgraph.types import (
 )
 
 
-client = OpenAI(
-    api_key=settings.openai_api_key
-)
-
 load_tools()
+
+
+def _complete(prompt: str) -> str:
+    client = create_bailian_client()
+    response = client.chat.completions.create(
+        model=settings.dashscope_chat_model,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ],
+        temperature=0,
+    )
+    return get_chat_text(response)
 
 def router_node(
     state: AgentState,
@@ -59,14 +73,9 @@ Return JSON only:
 }}
 """
 
-    response = client.responses.create(
-        model=settings.openai_model,
-        input=prompt,
+    data = parse_json_object(
+        _complete(prompt)
     )
-
-    raw = response.output_text
-
-    data = json.loads(raw)
 
     decision = (
         RouteDecision.model_validate(
@@ -112,18 +121,13 @@ Question:
 {state["user_input"]}
 """
 
-    response = client.responses.create(
-        model=settings.openai_model,
-        input=prompt,
-    )
-
     print(
         "\n[Direct Answer]"
     )
 
     return {
         "final_answer":
-            response.output_text
+            _complete(prompt)
     }
 
 def planner_node(
@@ -201,13 +205,8 @@ Return JSON:
 }}
 """
 
-    response = client.responses.create(
-        model=settings.openai_model,
-        input=prompt,
-    )
-
-    data = json.loads(
-        response.output_text
+    data = parse_json_object(
+        _complete(prompt)
     )
 
     plan = AgentPlan.model_validate(
@@ -500,13 +499,8 @@ Return JSON:
 }}
 """
 
-    response = client.responses.create(
-        model=settings.openai_model,
-        input=prompt,
-    )
-
-    data = json.loads(
-        response.output_text
+    data = parse_json_object(
+        _complete(prompt)
     )
 
     verification = (
@@ -610,13 +604,8 @@ Return JSON:
 }}
 """
 
-    response = client.responses.create(
-        model=settings.openai_model,
-        input=prompt,
-    )
-
-    data = json.loads(
-        response.output_text
+    data = parse_json_object(
+        _complete(prompt)
     )
 
     plan = AgentPlan.model_validate(
@@ -696,14 +685,9 @@ Rules:
 - Mention relevant supplier/order/risk identifiers.
 """
 
-    response = client.responses.create(
-        model=settings.openai_model,
-        input=prompt,
-    )
-
     return {
         "final_answer":
-            response.output_text
+            _complete(prompt)
     }
 
 def approval_node(

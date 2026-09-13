@@ -16,8 +16,16 @@ VECTOR_DB_PATH = (
 def get_embeddings():
 
     return OpenAIEmbeddings(
-        api_key=settings.openai_api_key,
-        model="text-embedding-3-small",
+        api_key=settings.dashscope_api_key,
+        base_url=settings.dashscope_base_url,
+        model=(
+            settings.dashscope_embedding_model
+        ),
+        dimensions=(
+            settings.dashscope_embedding_dimensions
+        ),
+        chunk_size=10,
+        check_embedding_ctx_length=False,
     )
 
 
@@ -40,7 +48,7 @@ def create_vector_store(
                 VECTOR_DB_PATH
             ),
             collection_name=(
-                "enterprise_policy"
+                settings.vector_collection_name
             ),
         )
     )
@@ -58,6 +66,6 @@ def load_vector_store():
             get_embeddings()
         ),
         collection_name=(
-            "enterprise_policy"
+            settings.vector_collection_name
         ),
     )

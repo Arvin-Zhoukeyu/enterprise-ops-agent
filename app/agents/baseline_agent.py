@@ -3,9 +3,11 @@ import time
 import uuid
 from typing import Any
 
-from openai import OpenAI
-
 from app.core.config import settings
+from app.llm import (
+    create_bailian_client,
+    get_chat_text,
+)
 from app.observability.recorder import (
     TraceRecorder,
 )
@@ -60,24 +62,17 @@ class BaselineAgent:
         save_traces: bool = True,
     ):
 
-        if not settings.openai_api_key:
-
-            raise RuntimeError(
-                "OPENAI_API_KEY is not configured."
-            )
-
         load_tools()
 
-        self.client = OpenAI(
-            api_key=settings.openai_api_key
-        )
+        self.client = create_bailian_client()
 
         self.model = (
-            settings.openai_model
+            settings.dashscope_chat_model
         )
 
         self.tools = (
-            tool_registry.to_openai_tools()
+            tool_registry
+            .to_chat_completion_tools()
         )
 
         self.save_traces = save_traces
@@ -108,13 +103,23 @@ class BaselineAgent:
 
         try:
 
-            response = (
-                self.client.responses.create(
-                    model=self.model,
-                    instructions=SYSTEM_PROMPT,
-                    input=user_input,
-                    tools=self.tools,
-                )
+            messages = [
+                {
+                    "role": "system",
+                    "content": SYSTEM_PROMPT,
+                },
+                {
+                    "role": "user",
+                    "content": user_input,
+                },
+            ]
+
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=messages,
+                tools=self.tools,
+                tool_choice="auto",
+                temperature=0,
             )
 
             trace.llm_calls += 1
@@ -130,13 +135,10 @@ class BaselineAgent:
                 max_rounds
             ):
 
-                function_calls = [
-                    item
-                    for item
-                    in response.output
-                    if item.type
-                    == "function_call"
-                ]
+                message = response.choices[0].message
+                function_calls = (
+                    message.tool_calls or []
+                )
 
                 if not function_calls:
 
@@ -147,20 +149,24 @@ class BaselineAgent:
                         )
 
                     trace.final_answer = (
-                        response.output_text
+                        get_chat_text(response)
                     )
 
                     trace.success = True
 
                     return (
-                        response.output_text
+                        trace.final_answer
                     )
 
                 trace.routing = (
                     "TOOL_CALL"
                 )
 
-                tool_outputs = []
+                messages.append(
+                    message.model_dump(
+                        exclude_none=True
+                    )
+                )
 
                 for function_call in (
                     function_calls
@@ -173,15 +179,12 @@ class BaselineAgent:
                         )
                     )
 
-                    tool_outputs.append(
+                    messages.append(
                         {
-                            "type":
-                                "function_call_output",
-
-                            "call_id":
-                                function_call.call_id,
-
-                            "output":
+                            "role": "tool",
+                            "tool_call_id":
+                                function_call.id,
+                            "content":
                                 json.dumps(
                                     result,
                                     ensure_ascii=False,
@@ -190,22 +193,12 @@ class BaselineAgent:
                         }
                     )
 
-                response = (
-                    self.client.responses.create(
-                        model=self.model,
-
-                        instructions=(
-                            SYSTEM_PROMPT
-                        ),
-
-                        previous_response_id=(
-                            response.id
-                        ),
-
-                        input=tool_outputs,
-
-                        tools=self.tools,
-                    )
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    tools=self.tools,
+                    tool_choice="auto",
+                    temperature=0,
                 )
 
                 trace.llm_calls += 1
@@ -264,11 +257,11 @@ class BaselineAgent:
     ) -> Any:
 
         tool_name = (
-            function_call.name
+            function_call.function.name
         )
 
         raw_arguments = (
-            function_call.arguments
+            function_call.function.arguments
         )
 
         tool_start = (
@@ -516,7 +509,7 @@ class BaselineAgent:
         input_tokens = (
             getattr(
                 usage,
-                "input_tokens",
+                "prompt_tokens",
                 0,
             )
             or 0
@@ -525,7 +518,7 @@ class BaselineAgent:
         output_tokens = (
             getattr(
                 usage,
-                "output_tokens",
+                "completion_tokens",
                 0,
             )
             or 0

@@ -20,9 +20,24 @@ class Settings(BaseSettings):
 
     environment: str = "development"
 
-    openai_api_key: str | None = None
+    dashscope_api_key: str | None = None
 
-    openai_model: str = "gpt-5.1"
+    dashscope_base_url: str = (
+        "https://dashscope.aliyuncs.com/"
+        "compatible-mode/v1"
+    )
+
+    dashscope_chat_model: str = "qwen-plus"
+
+    dashscope_embedding_model: str = (
+        "text-embedding-v4"
+    )
+
+    dashscope_embedding_dimensions: int = 1024
+
+    vector_collection_name: str = (
+        "enterprise_policy_bailian_v4"
+    )
 
     model_config = SettingsConfigDict(
         env_file=".env",
