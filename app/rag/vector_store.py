@@ -1,11 +1,15 @@
 from pathlib import Path
+from hashlib import sha256
 
 from langchain_chroma import Chroma
-from langchain_openai import (
-    OpenAIEmbeddings,
-)
+from app.rag.embeddings import BailianEmbeddings
 
 from app.core.config import settings
+from app.services.risk_rules import RULE_VERSION
+
+
+def collection_name():
+    return settings.vector_collection_name + "_rules_" + RULE_VERSION.replace(".", "_")
 
 
 VECTOR_DB_PATH = (
@@ -15,18 +19,7 @@ VECTOR_DB_PATH = (
 
 def get_embeddings():
 
-    return OpenAIEmbeddings(
-        api_key=settings.dashscope_api_key,
-        base_url=settings.dashscope_base_url,
-        model=(
-            settings.dashscope_embedding_model
-        ),
-        dimensions=(
-            settings.dashscope_embedding_dimensions
-        ),
-        chunk_size=10,
-        check_embedding_ctx_length=False,
-    )
+    return BailianEmbeddings()
 
 
 def create_vector_store(
@@ -43,12 +36,13 @@ def create_vector_store(
     vector_store = (
         Chroma.from_documents(
             documents=documents,
+            ids=[sha256((str(doc.metadata) + doc.page_content).encode()).hexdigest() for doc in documents],
             embedding=get_embeddings(),
             persist_directory=(
                 VECTOR_DB_PATH
             ),
             collection_name=(
-                settings.vector_collection_name
+                collection_name()
             ),
         )
     )
@@ -58,7 +52,7 @@ def create_vector_store(
 
 def load_vector_store():
 
-    return Chroma(
+    store = Chroma(
         persist_directory=(
             VECTOR_DB_PATH
         ),
@@ -66,6 +60,9 @@ def load_vector_store():
             get_embeddings()
         ),
         collection_name=(
-            settings.vector_collection_name
+            collection_name()
         ),
     )
+    if not store.get(limit=1)["ids"]:
+        raise RuntimeError("Policy index is missing. Run python -m scripts.build_knowledge_base for rules " + RULE_VERSION)
+    return store

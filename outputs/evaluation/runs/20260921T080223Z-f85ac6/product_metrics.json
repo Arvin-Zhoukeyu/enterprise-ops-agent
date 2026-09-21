@@ -1,0 +1,6 @@
+{
+  "scope": "synthetic offline benchmark; reviewed metrics apply only to reviewed samples",
+  "prices_cny_per_million_tokens": null,
+  "cost_scope": "estimate from observed API usage, excludes hosting, KB ingestion and unreported retry usage",
+  "agents": {}
+}

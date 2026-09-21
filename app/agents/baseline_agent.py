@@ -4,6 +4,7 @@ import uuid
 from typing import Any
 
 from app.core.config import settings
+from app.observability.usage import record_usage
 from app.llm import (
     create_bailian_client,
     get_chat_text,
@@ -502,6 +503,8 @@ class BaselineAgent:
             "usage",
             None,
         )
+
+        record_usage(usage)
 
         if usage is None:
             return

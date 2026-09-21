@@ -1,0 +1,49 @@
+{
+  "dataset": {
+    "path": "outputs\\evaluation\\runs\\20260921T080223Z-f85ac6\\dataset.json",
+    "unique_cases": 170,
+    "sha256": "cb1fb71e8db8273dadd5f9418d47ca88577bade60b3c4582a6abb29485de0a9c",
+    "counts": {
+      "common_agent_cases": 60,
+      "workflow_extension_cases": 30,
+      "rag_cases": 20,
+      "risk_rule_cases": 48,
+      "security_control_cases": 12
+    },
+    "source": "synthetic"
+  },
+  "prices": null,
+  "run": {
+    "directory": "outputs\\evaluation\\runs\\20260921T080223Z-f85ac6",
+    "git_revision": "a532fe55cc82d0b843ede67b1d65bac3e2578982",
+    "chat_model": "qwen-plus",
+    "embedding_model": "text-embedding-v4",
+    "rule_version": "2026.2",
+    "suite": "business",
+    "limit": null
+  },
+  "business_controls": {
+    "scope": "synthetic SQLite integration; no LLM, not enterprise production accuracy",
+    "risk_cases": 48,
+    "tp": 10,
+    "fp": 0,
+    "fn": 0,
+    "tn": 38,
+    "risk_precision": 1.0,
+    "risk_recall": 1.0,
+    "risk_false_positive_rate": 0.0,
+    "risk_false_negative_rate": 0.0,
+    "security_cases": 12,
+    "rbac_block_rate": 1.0,
+    "unapproved_write_rate": 0.0,
+    "rejected_write_rate": 0.0,
+    "approved_execution_success_rate": 1.0,
+    "passed": true
+  },
+  "product": {
+    "scope": "synthetic offline benchmark; reviewed metrics apply only to reviewed samples",
+    "prices_cny_per_million_tokens": null,
+    "cost_scope": "estimate from observed API usage, excludes hosting, KB ingestion and unreported retry usage",
+    "agents": {}
+  }
+}

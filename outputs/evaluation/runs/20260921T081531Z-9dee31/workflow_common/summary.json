@@ -1,0 +1,19 @@
+{
+  "total_cases": 2,
+  "execution_success_rate": 1,
+  "agent_success_rate": 1,
+  "task_completion_accuracy": 1,
+  "routing_accuracy": 1,
+  "exact_tool_sequence_accuracy": 1,
+  "tool_precision": 1.0,
+  "tool_recall": 1.0,
+  "tool_f1": 1.0,
+  "security_control_accuracy": null,
+  "average_latency_ms": 7308.38,
+  "p50_latency_ms": 7308.38,
+  "p95_latency_ms": 9660.67,
+  "average_replans": 0,
+  "category_task_accuracy": {
+    "general_knowledge": 1
+  }
+}

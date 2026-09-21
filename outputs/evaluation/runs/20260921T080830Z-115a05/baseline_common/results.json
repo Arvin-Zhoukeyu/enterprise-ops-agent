@@ -1,0 +1,40 @@
+[
+  {
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "embedding_tokens": 0,
+      "llm_calls": 0,
+      "embedding_calls": 0,
+      "missing_usage": 0
+    },
+    "actual_tools": [],
+    "expected_tools": [],
+    "observations": [],
+    "id": "EB001",
+    "category": "general_knowledge",
+    "query": "什么是供应链风险？",
+    "expected_routing": "DIRECT_RESPONSE",
+    "actual_routing": null,
+    "routing_correct": false,
+    "expected_tool": null,
+    "actual_tool": null,
+    "tool_correct": true,
+    "expected_arguments": {},
+    "actual_arguments": {},
+    "argument_score": 1.0,
+    "expected_status": null,
+    "actual_tool_status": null,
+    "status_correct": true,
+    "task_correct": false,
+    "llm_calls": 0,
+    "tool_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "latency_ms": 856.7715999670327,
+    "agent_success": false,
+    "answer": "",
+    "error": "Connection error."
+  }
+]

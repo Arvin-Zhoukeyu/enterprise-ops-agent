@@ -1,0 +1,689 @@
+{
+  "metadata": {
+    "name": "EnterpriseOps Agent Unified Synthetic Benchmark",
+    "version": "2.0",
+    "source": "synthetic",
+    "unique_case_count": 170,
+    "common_case_count": 60,
+    "workflow_extension_case_count": 30,
+    "rag_case_count": 20
+  },
+  "common_agent_cases": [
+    {
+      "id": "EB001",
+      "source": "synthetic",
+      "category": "general_knowledge",
+      "query": "什么是供应链风险？",
+      "expected_routing": "DIRECT_RESPONSE",
+      "expected_tool": null,
+      "expected_arguments": {},
+      "expected_route": "DIRECT_RESPONSE",
+      "expected_tools": [],
+      "role": "employee"
+    }
+  ],
+  "workflow_extension_cases": [
+    {
+      "id": "EW001",
+      "source": "synthetic",
+      "category": "general",
+      "input": "什么是供应链风险？",
+      "role": "employee",
+      "expected_route": "DIRECT_RESPONSE",
+      "expected_tools": []
+    }
+  ],
+  "rag_cases": [
+    {
+      "id": "ER001",
+      "source": "synthetic",
+      "query": "高价值采购的金额标准是多少？",
+      "expected_sources": [
+        "procurement_policy.txt"
+      ]
+    }
+  ],
+  "risk_rule_cases": [
+    {
+      "id": "BR001",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 6,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR002",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 6,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR003",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 6,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR004",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 6,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR005",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 7,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR006",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 7,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR007",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 7,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR008",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 7,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR009",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 8,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR010",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 8,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR011",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 8,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR012",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 99999,
+      "delay": 8,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR013",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 6,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR014",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 6,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR015",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 6,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR016",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 6,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR017",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR018",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR019",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR020",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR021",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 8,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR022",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 8,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR023",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 8,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR024",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100000,
+      "delay": 8,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR025",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 6,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR026",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 6,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR027",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 6,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR028",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 6,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR029",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 7,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR030",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 7,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR031",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 7,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR032",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 7,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR033",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 8,
+      "prior_days": [],
+      "expected_risk": false
+    },
+    {
+      "id": "BR034",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 8,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR035",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 8,
+      "prior_days": [
+        30,
+        45
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR036",
+      "source": "synthetic",
+      "category": "threshold_boundary",
+      "amount": 100001,
+      "delay": 8,
+      "prior_days": [
+        30,
+        45,
+        60
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR037",
+      "source": "synthetic",
+      "category": "window_start_included",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        184,
+        30
+      ],
+      "expected_risk": true
+    },
+    {
+      "id": "BR038",
+      "source": "synthetic",
+      "category": "window_before_start_excluded",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        185,
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR039",
+      "source": "synthetic",
+      "category": "same_day_excluded",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        0,
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR040",
+      "source": "synthetic",
+      "category": "later_delivery_excluded",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        -1,
+        30
+      ],
+      "expected_risk": false
+    },
+    {
+      "id": "BR041",
+      "source": "synthetic",
+      "category": "duplicate_order_excluded",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        30
+      ],
+      "expected_risk": false,
+      "duplicate": true
+    },
+    {
+      "id": "BR042",
+      "source": "synthetic",
+      "category": "other_supplier_excluded",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        40
+      ],
+      "expected_risk": false,
+      "other_supplier": true
+    },
+    {
+      "id": "BR043",
+      "source": "synthetic",
+      "category": "undelivered",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        40
+      ],
+      "expected_risk": false,
+      "undelivered": true
+    },
+    {
+      "id": "BR044",
+      "source": "synthetic",
+      "category": "future_delivery",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        40
+      ],
+      "expected_risk": false,
+      "future": true
+    },
+    {
+      "id": "BR045",
+      "source": "synthetic",
+      "category": "old_order",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        40
+      ],
+      "expected_risk": false,
+      "order_age": 91
+    },
+    {
+      "id": "BR046",
+      "source": "synthetic",
+      "category": "cutoff_order_included",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        40
+      ],
+      "expected_risk": true,
+      "order_age": 90
+    },
+    {
+      "id": "BR047",
+      "source": "synthetic",
+      "category": "prior_delay_below_threshold",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30,
+        40
+      ],
+      "expected_risk": false,
+      "prior_delay": 6
+    },
+    {
+      "id": "BR048",
+      "source": "synthetic",
+      "category": "current_order_not_history",
+      "amount": 100000,
+      "delay": 7,
+      "prior_days": [
+        30
+      ],
+      "expected_risk": false
+    }
+  ],
+  "security_control_cases": [
+    {
+      "id": "SC001",
+      "source": "synthetic",
+      "role": "employee",
+      "decision": "pending",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC002",
+      "source": "synthetic",
+      "role": "employee",
+      "decision": "reject",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC003",
+      "source": "synthetic",
+      "role": "employee",
+      "decision": "approve",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC004",
+      "source": "synthetic",
+      "role": "manager",
+      "decision": "pending",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC005",
+      "source": "synthetic",
+      "role": "manager",
+      "decision": "reject",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC006",
+      "source": "synthetic",
+      "role": "manager",
+      "decision": "approve",
+      "expected_writes": 1
+    },
+    {
+      "id": "SC007",
+      "source": "synthetic",
+      "role": "admin",
+      "decision": "pending",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC008",
+      "source": "synthetic",
+      "role": "admin",
+      "decision": "reject",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC009",
+      "source": "synthetic",
+      "role": "admin",
+      "decision": "approve",
+      "expected_writes": 1
+    },
+    {
+      "id": "SC010",
+      "source": "synthetic",
+      "role": "unknown",
+      "decision": "pending",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC011",
+      "source": "synthetic",
+      "role": "unknown",
+      "decision": "reject",
+      "expected_writes": 0
+    },
+    {
+      "id": "SC012",
+      "source": "synthetic",
+      "role": "unknown",
+      "decision": "approve",
+      "expected_writes": 0
+    }
+  ]
+}

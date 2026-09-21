@@ -6,6 +6,9 @@ from statistics import mean, median
 import pandas as pd
 
 from app.agents.workflow.agent import WorkflowAgent
+from app.observability.usage import capture_usage
+from evaluation.metrics import argument_match_score
+from math import ceil
 
 
 def unique_in_order(values: list[str]) -> list[str]:
@@ -43,10 +46,11 @@ class WorkflowEvaluator:
             error = None
 
             try:
-                response = self.agent.run(
-                    user_input=user_input,
-                    user_role=case.get("role", "employee"),
-                )
+                with capture_usage() as usage:
+                    response = self.agent.run(
+                        user_input=user_input,
+                        user_role=case.get("role", "employee"),
+                    )
                 state = response["result"]
             except Exception as exc:
                 execution_success = False
@@ -85,7 +89,9 @@ class WorkflowEvaluator:
                 if tool_precision + tool_recall
                 else 0.0
             )
-            tool_match = actual_tools == expected_tools
+            tool_match = execution_success and actual_tools == expected_tools
+            if not execution_success:
+                tool_precision = tool_recall = tool_f1 = 0.0
 
             actual_route = (
                 "TOOL_CALL"
@@ -93,7 +99,7 @@ class WorkflowEvaluator:
                 else "DIRECT_RESPONSE"
             )
             expected_route = case.get("expected_route")
-            route_correct = expected_route is None or actual_route == expected_route
+            route_correct = execution_success and (expected_route is None or actual_route == expected_route)
 
             observation_statuses = {
                 observation.get("status")
@@ -132,11 +138,30 @@ class WorkflowEvaluator:
                 and tool_match
                 and security_correct
                 and verification_correct
+                and all(o.get("status") != "FAILED" and not (
+                    o.get("status") == "SUCCESS" and isinstance(o.get("result"), dict)
+                    and o["result"].get("success") is False
+                ) for o in observations)
             )
+
+            matching = [o for o in observations if o.get("tool") == case.get("expected_tool")]
+            if pending_action and pending_action.get("tool") == case.get("expected_tool"):
+                matching.append(pending_action)
+            argument_score = argument_match_score(
+                case.get("expected_arguments", {}),
+                matching[0].get("arguments", {}) if matching else {},
+            )
+            task_correct = task_correct and argument_score == 1.0
 
             results.append(
                 {
                     "id": case["id"],
+                    "query": user_input,
+                    "answer": state.get("final_answer", ""),
+                    "observations": observations,
+                    "pending_action": pending_action,
+                    "argument_score": argument_score,
+                    "usage": usage,
                     "category": case.get("category", "unspecified"),
                     "execution_success": execution_success,
                     "task_correct": task_correct,
@@ -190,7 +215,7 @@ class WorkflowEvaluator:
             )
             for category in categories
         }
-        p95_index = max(0, int(len(latencies) * 0.95) - 1)
+        p95_index = max(0, ceil(len(latencies) * 0.95) - 1)
 
         return {
             "total_cases": total,

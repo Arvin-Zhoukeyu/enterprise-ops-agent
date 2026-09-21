@@ -1,0 +1,4 @@
+﻿usage,actual_tools,expected_tools,observations,id,category,query,expected_routing,actual_routing,routing_correct,expected_tool,actual_tool,tool_correct,expected_arguments,actual_arguments,argument_score,expected_status,actual_tool_status,status_correct,task_correct,llm_calls,tool_calls,input_tokens,output_tokens,total_tokens,latency_ms,agent_success,answer,error
+"{'input_tokens': 1509, 'output_tokens': 132, 'embedding_tokens': 0, 'llm_calls': 1, 'embedding_calls': 0, 'missing_usage': 0}",[],[],[],EB001,general_knowledge,什么是供应链风险？,DIRECT_RESPONSE,DIRECT_RESPONSE,True,,,True,{},{},1.0,,,True,True,1,0,1509,132,1641,7378.080700000282,True,"供应链风险是指在采购、生产、物流、交付等供应链各环节中，因外部环境变化（如地缘政治、自然灾害、疫情）、内部管理缺陷（如供应商资质不足、合同条款不严）、或运营异常（如交付延迟、质量不合格、付款违约）等因素，可能导致企业无法按时、按质、按成本履行订单，进而影响业务连续性、财务表现和合规状态的不确定性。
+
+该定义符合企业《供应链风险管理政策》第2.1条对“供应链风险”的标准界定。如需了解具体风险类型、分级标准或应对流程，我可为您检索相关企业政策条款。",

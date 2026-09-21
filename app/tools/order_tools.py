@@ -61,8 +61,8 @@ class FindHighRiskOrdersInput(
         default=2,
         ge=0,
         description=(
-            "Minimum number of historical "
-            "serious delays for the supplier."
+            "Minimum number of distinct prior delayed orders in the six "
+            "calendar months before this delivery, excluding the current order."
         ),
     )
 
@@ -242,11 +242,12 @@ tool_registry.register(
         name="find_high_risk_orders",
 
         description=(
-            "Find recent purchase orders "
+            "Retrospectively find completed purchase orders "
             "matching risk conditions such as "
             "large amount, significant delivery "
             "delay, and repeated historical "
-            "supplier delays."
+            "supplier delays in the previous six calendar months. "
+            "All minimum thresholds are inclusive; not a future-risk prediction."
         ),
 
         input_model=(

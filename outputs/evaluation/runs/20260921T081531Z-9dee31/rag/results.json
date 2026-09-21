@@ -1,0 +1,36 @@
+[
+  {
+    "id": "ER001",
+    "query": "高价值采购的金额标准是多少？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1731.0508000082336,
+    "error": null
+  },
+  {
+    "id": "ER002",
+    "query": "订单金额达到多少人民币属于高价值采购？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1256.9505999563262,
+    "error": null
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "total_cases": 60,
+  "routing_accuracy": 1.0,
+  "tool_selection_accuracy": 1.0,
+  "argument_accuracy": 0.985,
+  "agent_success_rate": 1.0,
+  "task_completion_accuracy": 0.95,
+  "status_accuracy": 1.0,
+  "average_latency_ms": 7071.4,
+  "p50_latency_ms": 5056.45,
+  "p95_latency_ms": 15260.68,
+  "average_tokens": 3431.3,
+  "average_llm_calls": 1.87,
+  "average_tool_calls": 0.87,
+  "category_task_accuracy": {
+    "general_knowledge": 1.0,
+    "order_lookup": 1.0,
+    "risk_event": 0.9,
+    "risk_order_search": 0.7778,
+    "supplier_filter": 1.0,
+    "supplier_lookup": 1.0,
+    "write_operation": 1.0
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "EB001",
+    "query": "什么是供应链风险？",
+    "answer": "",
+    "observations": [],
+    "pending_action": null,
+    "argument_score": 1.0,
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "embedding_tokens": 0,
+      "llm_calls": 0,
+      "embedding_calls": 0,
+      "missing_usage": 0
+    },
+    "category": "general_knowledge",
+    "execution_success": false,
+    "task_correct": false,
+    "latency_ms": 628.0900000128895,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": "Connection error."
+  }
+]

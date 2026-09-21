@@ -1,0 +1,342 @@
+[
+  {
+    "id": "ER001",
+    "query": "高价值采购的金额标准是多少？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1016.6957000037655,
+    "error": null
+  },
+  {
+    "id": "ER002",
+    "query": "订单金额达到多少人民币属于高价值采购？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1052.9923000140116,
+    "error": null
+  },
+  {
+    "id": "ER003",
+    "query": "超过五十万元的采购需要谁审核？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1083.8241000310518,
+    "error": null
+  },
+  {
+    "id": "ER004",
+    "query": "高价值订单延期后是否需要额外风险审查？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": false,
+    "hit_at_2": false,
+    "recall_at_2": 0.0,
+    "reciprocal_rank_at_2": 0.0,
+    "latency_ms": 1126.6208000015467,
+    "error": null
+  },
+  {
+    "id": "ER005",
+    "query": "修改采购记录需要什么授权？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "risk_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 2302.549000014551,
+    "error": null
+  },
+  {
+    "id": "ER006",
+    "query": "重复出现交付问题的供应商应该怎么处理？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": false,
+    "hit_at_2": false,
+    "recall_at_2": 0.0,
+    "reciprocal_rank_at_2": 0.0,
+    "latency_ms": 1199.3644000031054,
+    "error": null
+  },
+  {
+    "id": "ER007",
+    "query": "采购经理审核的金额门槛是什么？",
+    "expected_sources": [
+      "procurement_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1098.752100020647,
+    "error": null
+  },
+  {
+    "id": "ER008",
+    "query": "几天以上的交付延期属于重大延期？",
+    "expected_sources": [
+      "supplier_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1077.9688999755308,
+    "error": null
+  },
+  {
+    "id": "ER009",
+    "query": "十五天以上的延期应该如何定级？",
+    "expected_sources": [
+      "supplier_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1030.414999986533,
+    "error": null
+  },
+  {
+    "id": "ER010",
+    "query": "供应商半年内多次延期应如何升级？",
+    "expected_sources": [
+      "supplier_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1031.5851000486873,
+    "error": null
+  },
+  {
+    "id": "ER011",
+    "query": "评估供应商风险应参考哪些数据？",
+    "expected_sources": [
+      "supplier_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1048.3683999627829,
+    "error": null
+  },
+  {
+    "id": "ER012",
+    "query": "供应商出现多少次严重延期属于风险升高？",
+    "expected_sources": [
+      "supplier_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1145.6700999988243,
+    "error": null
+  },
+  {
+    "id": "ER013",
+    "query": "重复重大延期是否需要人工采购复核？",
+    "expected_sources": [
+      "supplier_policy.txt"
+    ],
+    "actual_sources": [
+      "procurement_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": false,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 0.5,
+    "latency_ms": 1132.2289000381716,
+    "error": null
+  },
+  {
+    "id": "ER014",
+    "query": "供应商风险评估是否应该考虑付款事件？",
+    "expected_sources": [
+      "supplier_policy.txt"
+    ],
+    "actual_sources": [
+      "supplier_policy.txt",
+      "supplier_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1121.9834000221454,
+    "error": null
+  },
+  {
+    "id": "ER015",
+    "query": "AI 能否未经批准直接创建调查工单？",
+    "expected_sources": [
+      "risk_policy.txt"
+    ],
+    "actual_sources": [
+      "risk_policy.txt",
+      "risk_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1099.700800026767,
+    "error": null
+  },
+  {
+    "id": "ER016",
+    "query": "高严重度运营风险由谁复核？",
+    "expected_sources": [
+      "risk_policy.txt"
+    ],
+    "actual_sources": [
+      "risk_policy.txt",
+      "risk_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1339.4535999977961,
+    "error": null
+  },
+  {
+    "id": "ER017",
+    "query": "创建调查工单属于读操作还是写操作？",
+    "expected_sources": [
+      "risk_policy.txt"
+    ],
+    "actual_sources": [
+      "risk_policy.txt",
+      "risk_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1115.8953999984078,
+    "error": null
+  },
+  {
+    "id": "ER018",
+    "query": "风险证据不足时系统应该怎么回答？",
+    "expected_sources": [
+      "risk_policy.txt"
+    ],
+    "actual_sources": [
+      "risk_policy.txt",
+      "risk_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1572.367699991446,
+    "error": null
+  },
+  {
+    "id": "ER019",
+    "query": "风险分析中事实与推断应该如何处理？",
+    "expected_sources": [
+      "risk_policy.txt"
+    ],
+    "actual_sources": [
+      "risk_policy.txt",
+      "risk_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1102.7740000281483,
+    "error": null
+  },
+  {
+    "id": "ER020",
+    "query": "哪些状态变更操作必须人工审批？",
+    "expected_sources": [
+      "risk_policy.txt"
+    ],
+    "actual_sources": [
+      "risk_policy.txt",
+      "procurement_policy.txt"
+    ],
+    "hit_at_1": true,
+    "hit_at_2": true,
+    "recall_at_2": 1.0,
+    "reciprocal_rank_at_2": 1.0,
+    "latency_ms": 1070.0176000245847,
+    "error": null
+  }
+]

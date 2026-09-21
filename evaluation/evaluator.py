@@ -1,4 +1,6 @@
 import json
+from dataclasses import asdict
+from math import ceil
 from pathlib import Path
 from statistics import mean, median
 from typing import Any
@@ -11,6 +13,7 @@ from app.agents.baseline_agent import (
 from evaluation.metrics import (
     argument_match_score,
 )
+from app.observability.usage import capture_usage
 
 
 class BaselineEvaluator:
@@ -135,9 +138,8 @@ class BaselineEvaluator:
 
         try:
 
-            answer = self.agent.run(
-                case["query"]
-            )
+            with capture_usage() as usage:
+                answer = self.agent.run(case["query"])
 
         except Exception as exc:
 
@@ -224,6 +226,10 @@ class BaselineEvaluator:
             else 1.0
         )
 
+        actual_tools = list(dict.fromkeys(call.tool_name for call in trace.tool_calls))
+        expected_tools = case.get("expected_tools", [expected_tool] if expected_tool else [])
+        tool_correct = not error and trace.success and actual_tools == expected_tools
+
         expected_status = (
             case.get(
                 "expected_status"
@@ -242,6 +248,10 @@ class BaselineEvaluator:
             status_correct = True
 
         return {
+            "usage": usage,
+            "actual_tools": actual_tools,
+            "expected_tools": expected_tools,
+            "observations": [asdict(call) for call in trace.tool_calls],
             "id":
                 case["id"],
 
@@ -289,6 +299,9 @@ class BaselineEvaluator:
 
             "task_correct": (
                 trace.success
+                and all(call.status in {"SUCCESS", "BLOCKED"} for call in trace.tool_calls)
+                and all(not (call.status == "SUCCESS" and isinstance(call.result, dict)
+                             and call.result.get("success") is False) for call in trace.tool_calls)
                 and routing_correct
                 and tool_correct
                 and argument_score == 1.0
@@ -466,7 +479,7 @@ class BaselineEvaluator:
 
         p95_index = max(
             0,
-            int(
+            ceil(
                 len(sorted_latencies)
                 * 0.95
             )

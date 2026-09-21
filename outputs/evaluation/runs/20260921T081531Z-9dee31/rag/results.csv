@@ -1,0 +1,3 @@
+﻿id,query,expected_sources,actual_sources,hit_at_1,hit_at_2,recall_at_2,reciprocal_rank_at_2,latency_ms,error
+ER001,高价值采购的金额标准是多少？,['procurement_policy.txt'],"['procurement_policy.txt', 'supplier_policy.txt']",True,True,1.0,1.0,1731.0508000082336,
+ER002,订单金额达到多少人民币属于高价值采购？,['procurement_policy.txt'],"['procurement_policy.txt', 'supplier_policy.txt']",True,True,1.0,1.0,1256.9505999563262,

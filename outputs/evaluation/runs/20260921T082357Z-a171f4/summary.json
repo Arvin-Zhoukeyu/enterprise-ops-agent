@@ -1,0 +1,303 @@
+{
+  "dataset": {
+    "path": "outputs\\evaluation\\runs\\20260921T082357Z-a171f4\\dataset.json",
+    "unique_cases": 170,
+    "sha256": "13bd94e7b88a9d18deae224d0e3e89acec32947166e36e3eb3c5bc89152295b3",
+    "counts": {
+      "common_agent_cases": 60,
+      "workflow_extension_cases": 30,
+      "rag_cases": 20,
+      "risk_rule_cases": 48,
+      "security_control_cases": 12
+    },
+    "source": "synthetic"
+  },
+  "prices": null,
+  "run": {
+    "directory": "outputs\\evaluation\\runs\\20260921T082357Z-a171f4",
+    "git_revision": "a532fe55cc82d0b843ede67b1d65bac3e2578982",
+    "source_sha256": "09c112727e29d84fa24546d47013e7a90d956899c5b52ba09a6a60d1ecb6c1c7",
+    "chat_model": "qwen-plus",
+    "embedding_model": "text-embedding-v4",
+    "rule_version": "2026.2",
+    "suite": "all",
+    "limit": null
+  },
+  "baseline_common": {
+    "total_cases": 60,
+    "routing_accuracy": 1.0,
+    "tool_selection_accuracy": 1.0,
+    "argument_accuracy": 0.985,
+    "agent_success_rate": 1.0,
+    "task_completion_accuracy": 0.95,
+    "status_accuracy": 1.0,
+    "average_latency_ms": 7071.4,
+    "p50_latency_ms": 5056.45,
+    "p95_latency_ms": 15260.68,
+    "average_tokens": 3431.3,
+    "average_llm_calls": 1.87,
+    "average_tool_calls": 0.87,
+    "category_task_accuracy": {
+      "general_knowledge": 1.0,
+      "order_lookup": 1.0,
+      "risk_event": 0.9,
+      "risk_order_search": 0.7778,
+      "supplier_filter": 1.0,
+      "supplier_lookup": 1.0,
+      "write_operation": 1.0
+    }
+  },
+  "workflow_common": {
+    "total_cases": 60,
+    "execution_success_rate": 1,
+    "agent_success_rate": 1,
+    "task_completion_accuracy": 0.9,
+    "routing_accuracy": 1,
+    "exact_tool_sequence_accuracy": 0.95,
+    "tool_precision": 0.975,
+    "tool_recall": 1.0,
+    "tool_f1": 0.9833,
+    "security_control_accuracy": 1,
+    "average_latency_ms": 32626.38,
+    "p50_latency_ms": 12607.14,
+    "p95_latency_ms": 35325.25,
+    "average_replans": 0.1333,
+    "category_task_accuracy": {
+      "general_knowledge": 1,
+      "order_lookup": 1,
+      "risk_event": 0.8,
+      "risk_order_search": 0.6667,
+      "supplier_filter": 1,
+      "supplier_lookup": 1,
+      "write_operation": 0.8333
+    }
+  },
+  "common_comparison": {
+    "task_completion_delta": -0.05,
+    "routing_accuracy_delta": 0.0,
+    "average_latency_delta_ms": 25554.98
+  },
+  "workflow_extension": {
+    "total_cases": 30,
+    "execution_success_rate": 1,
+    "agent_success_rate": 1,
+    "task_completion_accuracy": 0.6667,
+    "routing_accuracy": 0.9,
+    "exact_tool_sequence_accuracy": 0.7,
+    "tool_precision": 0.7778,
+    "tool_recall": 0.8667,
+    "tool_f1": 0.8056,
+    "security_control_accuracy": 0.8333,
+    "average_latency_ms": 18778.47,
+    "p50_latency_ms": 15567.11,
+    "p95_latency_ms": 42367.56,
+    "average_replans": 0.2333,
+    "category_task_accuracy": {
+      "approval": 0,
+      "general": 1,
+      "multi_step": 0.8571,
+      "order": 1,
+      "policy_rag": 0.4,
+      "rbac": 0,
+      "risk": 1,
+      "supplier": 1
+    }
+  },
+  "rag": {
+    "total_cases": 20,
+    "top_k": 2,
+    "hit_at_1": 0.85,
+    "hit_at_2": 0.9,
+    "recall_at_2": 0.9,
+    "mrr_at_2": 0.875,
+    "average_latency_ms": 1188.46,
+    "p50_latency_ms": 1101.24,
+    "p95_latency_ms": 1572.37,
+    "error_rate": 0
+  },
+  "business_controls": {
+    "scope": "synthetic SQLite integration; no LLM, not enterprise production accuracy",
+    "risk_cases": 48,
+    "tp": 10,
+    "fp": 0,
+    "fn": 0,
+    "tn": 38,
+    "risk_precision": 1.0,
+    "risk_recall": 1.0,
+    "risk_false_positive_rate": 0.0,
+    "risk_false_negative_rate": 0.0,
+    "security_cases": 12,
+    "rbac_block_rate": 1.0,
+    "rbac_denied_cases": 6,
+    "approval_pass_cases": 2,
+    "approval_reject_cases": 2,
+    "unapproved_write_rate": 0.0,
+    "rejected_write_rate": 0.0,
+    "approved_execution_success_rate": 1.0,
+    "passed": true
+  },
+  "product": {
+    "scope": "synthetic offline benchmark; reviewed metrics apply only to reviewed samples",
+    "prices_cny_per_million_tokens": null,
+    "cost_scope": "estimate from observed API usage, excludes hosting, KB ingestion and unreported retry usage",
+    "agents": {
+      "baseline_common": {
+        "cases": 60,
+        "process_contract_success_rate": 0.95,
+        "reviewed_cases": 0,
+        "review_coverage": 0.0,
+        "reviewed_end_to_end_success_rate": null,
+        "reviewed_end_to_end_wilson95": null,
+        "claims_checked": 0,
+        "unsupported_claim_rate": null,
+        "citations_checked": 0,
+        "citation_correctness": null,
+        "average_latency_ms": 7071.402820002792,
+        "p95_latency_ms": 15260.684699984267,
+        "usage": {
+          "input_tokens": 191362,
+          "output_tokens": 14516,
+          "embedding_tokens": 0,
+          "llm_calls": 112,
+          "embedding_calls": 0,
+          "missing_usage": 0
+        },
+        "cost_coverage": 0.0,
+        "mean_cost_cny": null,
+        "cost_per_reviewed_success_cny": null,
+        "timed_pairs": 0,
+        "both_successful_pairs": 0,
+        "paired_time_reduction": null,
+        "time_reduction_by_trial_type": {
+          "simulation": null,
+          "real_user": null
+        },
+        "participants": 0,
+        "paired_labor_value_saved_cny": null,
+        "labor_value_scope": "scenario estimate on both-successful timed pairs; not realized headcount savings or total ROI",
+        "assisted_trial_success_rate": null,
+        "satisfaction_responses": 0,
+        "mean_satisfaction_1_to_5": null,
+        "bad_case_counts": {
+          "arguments": 3
+        }
+      },
+      "workflow_common": {
+        "cases": 60,
+        "process_contract_success_rate": 0.9,
+        "reviewed_cases": 0,
+        "review_coverage": 0.0,
+        "reviewed_end_to_end_success_rate": null,
+        "reviewed_end_to_end_wilson95": null,
+        "claims_checked": 0,
+        "unsupported_claim_rate": null,
+        "citations_checked": 0,
+        "citation_correctness": null,
+        "average_latency_ms": 32626.379048331484,
+        "p95_latency_ms": 35325.24710003054,
+        "usage": {
+          "input_tokens": 153586,
+          "output_tokens": 27428,
+          "embedding_tokens": 44,
+          "llm_calls": 228,
+          "embedding_calls": 1,
+          "missing_usage": 0
+        },
+        "cost_coverage": 0.0,
+        "mean_cost_cny": null,
+        "cost_per_reviewed_success_cny": null,
+        "timed_pairs": 0,
+        "both_successful_pairs": 0,
+        "paired_time_reduction": null,
+        "time_reduction_by_trial_type": {
+          "simulation": null,
+          "real_user": null
+        },
+        "participants": 0,
+        "paired_labor_value_saved_cny": null,
+        "labor_value_scope": "scenario estimate on both-successful timed pairs; not realized headcount savings or total ROI",
+        "assisted_trial_success_rate": null,
+        "satisfaction_responses": 0,
+        "mean_satisfaction_1_to_5": null,
+        "bad_case_counts": {
+          "insufficient_evidence": 4,
+          "tool_selection": 3,
+          "arguments": 1
+        }
+      },
+      "workflow_extension": {
+        "cases": 30,
+        "process_contract_success_rate": 0.6666666666666666,
+        "reviewed_cases": 0,
+        "review_coverage": 0.0,
+        "reviewed_end_to_end_success_rate": null,
+        "reviewed_end_to_end_wilson95": null,
+        "claims_checked": 0,
+        "unsupported_claim_rate": null,
+        "citations_checked": 0,
+        "citation_correctness": null,
+        "average_latency_ms": 18778.469953334814,
+        "p95_latency_ms": 42367.55700001959,
+        "usage": {
+          "input_tokens": 118023,
+          "output_tokens": 17287,
+          "embedding_tokens": 123,
+          "llm_calls": 114,
+          "embedding_calls": 12,
+          "missing_usage": 0
+        },
+        "cost_coverage": 0.0,
+        "mean_cost_cny": null,
+        "cost_per_reviewed_success_cny": null,
+        "timed_pairs": 0,
+        "both_successful_pairs": 0,
+        "paired_time_reduction": null,
+        "time_reduction_by_trial_type": {
+          "simulation": null,
+          "real_user": null
+        },
+        "participants": 0,
+        "paired_labor_value_saved_cny": null,
+        "labor_value_scope": "scenario estimate on both-successful timed pairs; not realized headcount savings or total ROI",
+        "assisted_trial_success_rate": null,
+        "satisfaction_responses": 0,
+        "mean_satisfaction_1_to_5": null,
+        "bad_case_counts": {
+          "routing": 3,
+          "tool_selection": 9,
+          "insufficient_evidence": 4,
+          "security": 1
+        }
+      }
+    },
+    "business_controls": {
+      "scope": "synthetic SQLite integration; no LLM, not enterprise production accuracy",
+      "risk_cases": 48,
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "tn": 38,
+      "risk_precision": 1.0,
+      "risk_recall": 1.0,
+      "risk_false_positive_rate": 0.0,
+      "risk_false_negative_rate": 0.0,
+      "security_cases": 12,
+      "rbac_block_rate": 1.0,
+      "rbac_denied_cases": 6,
+      "approval_pass_cases": 2,
+      "approval_reject_cases": 2,
+      "unapproved_write_rate": 0.0,
+      "rejected_write_rate": 0.0,
+      "approved_execution_success_rate": 1.0,
+      "passed": true
+    }
+  },
+  "executed_case_counts": {
+    "baseline_common": 60,
+    "workflow_common": 60,
+    "workflow_extension": 30,
+    "rag": 20,
+    "risk_rules": 48,
+    "security_controls": 12
+  }
+}

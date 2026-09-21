@@ -1,0 +1,17 @@
+﻿id,query,answer,observations,pending_action,argument_score,usage,category,execution_success,task_correct,latency_ms,expected_route,actual_route,route_correct,expected_tools,actual_tools,tool_match,tool_precision,tool_recall,tool_f1,expected_security_status,actual_security_status,security_correct,verification_status,verification_correct,replan_count,error
+EB001,什么是供应链风险？,供应链风险是指企业在采购、生产、物流、交付等供应链各环节中，因内部或外部不确定性因素（如供应商破产、地缘政治冲突、自然灾害、网络攻击、质量缺陷、合规违规、需求突变、运输中断等）导致供应中断、成本上升、交付延迟、声誉受损或业务连续性受挫的可能性与潜在影响。其核心在于**供应稳定性、韧性与可控性**的缺失。,[],,1.0,"{'input_tokens': 133, 'output_tokens': 110, 'embedding_tokens': 0, 'llm_calls': 2, 'embedding_calls': 0, 'missing_usage': 0}",general_knowledge,True,True,4956.101900024805,DIRECT_RESPONSE,DIRECT_RESPONSE,True,[],[],True,1.0,1.0,1.0,,,True,,True,0,
+EB002,采购订单通常包含哪些信息？,"采购订单（PO）通常包含以下关键信息：
+
+1. **PO编号**：唯一标识符，用于追踪和对账。  
+2. **日期**：创建日期及（可选）要求交付日期。  
+3. **买卖双方信息**：采购方（公司名称、地址、联系人、税号等）与供应商信息。  
+4. **物料/服务明细**：  
+　- 物料编码或SKU、描述、规格/型号；  
+　- 数量、单价、币种；  
+　- 总金额（含税/不含税）、折扣、运费条款（如FOB、DDP）；  
+　- 交货地点、包装与验收要求。  
+5. **付款条款**：账期（如Net 30）、付款方式（电汇、承兑汇票等）、开票要求。  
+6. **审批信息**：采购申请人、部门、预算科目、审批人签字/电子审批记录。  
+7. **法律与合规条款**：质量标准、违约责任、知识产权、保密、适用法律等（可引用标准条款或附件）。  
+
+注：具体字段可能因行业、企业内控要求或ERP系统配置略有差异，但以上为通用核心要素。",[],,1.0,"{'input_tokens': 139, 'output_tokens': 283, 'embedding_tokens': 0, 'llm_calls': 2, 'embedding_calls': 0, 'missing_usage': 0}",general_knowledge,True,True,9660.666499985382,DIRECT_RESPONSE,DIRECT_RESPONSE,True,[],[],True,1.0,1.0,1.0,,,True,,True,0,

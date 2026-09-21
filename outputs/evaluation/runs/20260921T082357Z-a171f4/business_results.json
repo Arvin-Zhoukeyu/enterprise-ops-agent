@@ -1,0 +1,507 @@
+{
+  "summary": {
+    "scope": "synthetic SQLite integration; no LLM, not enterprise production accuracy",
+    "risk_cases": 48,
+    "tp": 10,
+    "fp": 0,
+    "fn": 0,
+    "tn": 38,
+    "risk_precision": 1.0,
+    "risk_recall": 1.0,
+    "risk_false_positive_rate": 0.0,
+    "risk_false_negative_rate": 0.0,
+    "security_cases": 12,
+    "rbac_block_rate": 1.0,
+    "rbac_denied_cases": 6,
+    "approval_pass_cases": 2,
+    "approval_reject_cases": 2,
+    "unapproved_write_rate": 0.0,
+    "rejected_write_rate": 0.0,
+    "approved_execution_success_rate": 1.0,
+    "passed": true
+  },
+  "risk_results": [
+    {
+      "id": "BR001",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR002",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR003",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR004",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR005",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR006",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR007",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR008",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR009",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR010",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR011",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR012",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR013",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR014",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR015",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR016",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR017",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR018",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR019",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR020",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR021",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR022",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR023",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR024",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR025",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR026",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR027",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR028",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR029",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR030",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR031",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR032",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR033",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR034",
+      "category": "threshold_boundary",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR035",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR036",
+      "category": "threshold_boundary",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR037",
+      "category": "window_start_included",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR038",
+      "category": "window_before_start_excluded",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR039",
+      "category": "same_day_excluded",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR040",
+      "category": "later_delivery_excluded",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR041",
+      "category": "duplicate_order_excluded",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR042",
+      "category": "other_supplier_excluded",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR043",
+      "category": "undelivered",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR044",
+      "category": "future_delivery",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR045",
+      "category": "old_order",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR046",
+      "category": "cutoff_order_included",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "BR047",
+      "category": "prior_delay_below_threshold",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "BR048",
+      "category": "current_order_not_history",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    }
+  ],
+  "security_results": [
+    {
+      "id": "SC001",
+      "source": "synthetic",
+      "role": "employee",
+      "decision": "pending",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": false,
+      "permission_denied": true
+    },
+    {
+      "id": "SC002",
+      "source": "synthetic",
+      "role": "employee",
+      "decision": "reject",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": false,
+      "permission_denied": true
+    },
+    {
+      "id": "SC003",
+      "source": "synthetic",
+      "role": "employee",
+      "decision": "approve",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": false,
+      "permission_denied": true
+    },
+    {
+      "id": "SC004",
+      "source": "synthetic",
+      "role": "manager",
+      "decision": "pending",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": true,
+      "permission_denied": false
+    },
+    {
+      "id": "SC005",
+      "source": "synthetic",
+      "role": "manager",
+      "decision": "reject",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": true,
+      "permission_denied": false
+    },
+    {
+      "id": "SC006",
+      "source": "synthetic",
+      "role": "manager",
+      "decision": "approve",
+      "expected_writes": 1,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 1,
+      "interrupted": true,
+      "permission_denied": false
+    },
+    {
+      "id": "SC007",
+      "source": "synthetic",
+      "role": "admin",
+      "decision": "pending",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": true,
+      "permission_denied": false
+    },
+    {
+      "id": "SC008",
+      "source": "synthetic",
+      "role": "admin",
+      "decision": "reject",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": true,
+      "permission_denied": false
+    },
+    {
+      "id": "SC009",
+      "source": "synthetic",
+      "role": "admin",
+      "decision": "approve",
+      "expected_writes": 1,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 1,
+      "interrupted": true,
+      "permission_denied": false
+    },
+    {
+      "id": "SC010",
+      "source": "synthetic",
+      "role": "unknown",
+      "decision": "pending",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": false,
+      "permission_denied": true
+    },
+    {
+      "id": "SC011",
+      "source": "synthetic",
+      "role": "unknown",
+      "decision": "reject",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": false,
+      "permission_denied": true
+    },
+    {
+      "id": "SC012",
+      "source": "synthetic",
+      "role": "unknown",
+      "decision": "approve",
+      "expected_writes": 0,
+      "passed": true,
+      "writes_before_approval": 0,
+      "writes_after": 0,
+      "interrupted": false,
+      "permission_denied": true
+    }
+  ]
+}

@@ -6,6 +6,7 @@ from statistics import mean, median
 import pandas as pd
 
 from app.rag.retriever import search_policy
+from math import ceil
 
 
 class RagEvaluator:
@@ -67,7 +68,7 @@ class RagEvaluator:
             )
 
         latencies = sorted(result["latency_ms"] for result in results)
-        p95_index = max(0, int(len(latencies) * 0.95) - 1)
+        p95_index = max(0, ceil(len(latencies) * 0.95) - 1)
         summary = {
             "total_cases": len(results),
             "top_k": self.top_k,

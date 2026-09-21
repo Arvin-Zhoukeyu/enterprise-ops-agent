@@ -1,0 +1,12 @@
+{
+  "total_cases": 2,
+  "top_k": 2,
+  "hit_at_1": 1,
+  "hit_at_2": 1,
+  "recall_at_2": 1.0,
+  "mrr_at_2": 1.0,
+  "average_latency_ms": 1494.0,
+  "p50_latency_ms": 1494.0,
+  "p95_latency_ms": 1731.05,
+  "error_rate": 0
+}

@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from typing import Any
+from evaluation.product_cases import risk_cases, security_cases
 
 
 DATASET_PATH = Path("evaluation/dataset.json")
@@ -12,7 +13,7 @@ def write_dataset(dataset: dict[str, Any]) -> None:
         encoding="utf-8",
     )
     print(
-        "Wrote 110 synthetic cases to "
+        f"Wrote {dataset['metadata']['unique_case_count']} synthetic cases to "
         f"{DATASET_PATH}"
     )
 
@@ -124,12 +125,12 @@ def baseline_cases() -> list[dict[str, Any]]:
         add("risk_event", query, "TOOL_CALL", "list_risk_events", arguments)
 
     high_risk_searches = [
-        ("查询最近365天金额超过10万元、延期至少7天、历史延期至少2次的订单，最多5条", 365, 100000, 7, 2, 5),
+        ("查询最近365天金额至少10万元、延期至少7天、历史延期至少2次的订单，最多5条", 365, 100000, 7, 2, 5),
         ("查近180天金额20万元以上、延期10天、历史延期3次的高风险订单，返回10条", 180, 200000, 10, 3, 10),
         ("筛选近90天金额5万元以上且延期5天的订单，最多8条", 90, 50000, 5, 2, 8),
-        ("查询近30天金额超过30万元、延期15天、历史延期4次的订单，返回6条", 30, 300000, 15, 4, 6),
+        ("查询近30天金额至少30万元、延期15天、历史延期4次的订单，返回6条", 30, 300000, 15, 4, 6),
         ("找出近730天金额50万元以上、延期7天且历史延期2次的订单，最多12条", 730, 500000, 7, 2, 12),
-        ("Search 5 risky orders from the last 120 days over CNY 150000, delayed 9 days, with 2 prior delays", 120, 150000, 9, 2, 5),
+        ("Search 5 risky orders from the last 120 days of at least CNY 150000, delayed at least 9 days, with at least 2 prior delays", 120, 150000, 9, 2, 5),
         ("查近60天金额8万元以上、延期3天、历史延期1次的订单，最多4条", 60, 80000, 3, 1, 4),
         ("返回近3650天金额100万元以上、延期20天、历史延期5次的订单，最多20条", 3650, 1000000, 20, 5, 20),
         ("查询最近270天金额12万元以上、延期8天、历史延期2次的订单，返回7条", 270, 120000, 8, 2, 7),
@@ -187,7 +188,7 @@ def workflow_cases() -> list[dict[str, Any]]:
         ("supplier", "查看 SUP-2026-0031 的评级和风险等级", "TOOL_CALL", ["get_supplier"], None),
         ("supplier", "返回10家低风险供应商", "TOOL_CALL", ["list_suppliers"], None),
         ("order", "查询采购订单 PO-2026-000268", "TOOL_CALL", ["get_purchase_order"], None),
-        ("order", "分析近365天金额超过10万元、延期7天且历史延期2次的订单", "TOOL_CALL", ["find_high_risk_orders"], None),
+        ("order", "分析近365天金额至少10万元、延期7天且历史延期2次的订单", "TOOL_CALL", ["find_high_risk_orders"], None),
         ("risk", "查询10条付款失败风险事件", "TOOL_CALL", ["list_risk_events"], None),
         ("risk", "列出最近8条高风险事件", "TOOL_CALL", ["list_risk_events"], None),
         ("policy_rag", "根据企业政策，延期多少天属于重大交付延期？", "TOOL_CALL", ["search_enterprise_policy"], None),
@@ -195,7 +196,7 @@ def workflow_cases() -> list[dict[str, Any]]:
         ("policy_rag", "按照内部制度，哪些采购需要经理审核？", "TOOL_CALL", ["search_enterprise_policy"], None),
         ("policy_rag", "企业政策对 AI 创建风险工单有什么限制？", "TOOL_CALL", ["search_enterprise_policy"], None),
         ("policy_rag", "供应商出现几次严重延期后应提高风险等级？", "TOOL_CALL", ["search_enterprise_policy"], None),
-        ("multi_step", "分析近365天金额超过10万元、延期至少7天且历史延期2次的订单，并按企业政策判断是否升级", "TOOL_CALL", ["find_high_risk_orders", "search_enterprise_policy"], None),
+        ("multi_step", "分析近365天金额至少10万元、延期至少7天且历史延期2次的订单，并按企业政策判断是否升级", "TOOL_CALL", ["find_high_risk_orders", "search_enterprise_policy"], None),
         ("multi_step", "查询供应商 SUP-2026-0003，并结合企业政策说明应该如何监控", "TOOL_CALL", ["get_supplier", "search_enterprise_policy"], None),
         ("multi_step", "查看订单 PO-2026-000268，并根据采购制度判断是否需要额外风险审查", "TOOL_CALL", ["get_purchase_order", "search_enterprise_policy"], None),
         ("multi_step", "查询最近高风险事件，并结合风险升级政策给出处置建议", "TOOL_CALL", ["list_risk_events", "search_enterprise_policy"], None),
@@ -233,7 +234,7 @@ def workflow_cases() -> list[dict[str, Any]]:
 def rag_cases() -> list[dict[str, Any]]:
     rows = [
         ("高价值采购的金额标准是多少？", "procurement_policy.txt"),
-        ("订单金额超过多少人民币属于高价值采购？", "procurement_policy.txt"),
+        ("订单金额达到多少人民币属于高价值采购？", "procurement_policy.txt"),
         ("超过五十万元的采购需要谁审核？", "procurement_policy.txt"),
         ("高价值订单延期后是否需要额外风险审查？", "procurement_policy.txt"),
         ("修改采购记录需要什么授权？", "procurement_policy.txt"),
@@ -285,9 +286,9 @@ def main() -> None:
     dataset = {
         "metadata": {
             "name": "EnterpriseOps Agent Unified Synthetic Benchmark",
-            "version": "1.0",
+            "version": "2.0",
             "source": "synthetic",
-            "unique_case_count": 110,
+            "unique_case_count": 110 + len(risk_cases()) + len(security_cases()),
             "common_case_count": 60,
             "workflow_extension_case_count": 30,
             "rag_case_count": 20,
@@ -295,6 +296,8 @@ def main() -> None:
         "common_agent_cases": common_cases,
         "workflow_extension_cases": workflow_cases(),
         "rag_cases": rag_cases(),
+        "risk_rule_cases": risk_cases(),
+        "security_control_cases": security_cases(),
     }
     write_dataset(dataset)
 

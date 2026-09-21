@@ -1,0 +1,3 @@
+﻿agent,id,reviewer,task_achieved,claims_checked,unsupported_claims,citations_checked,correct_citations,participant,trial_type,human_seconds,assisted_seconds,human_success,assisted_success,satisfaction,feedback
+baseline_common,EB001,,,,,,,,,,,,,,
+workflow_common,EB001,,,,,,,,,,,,,,

@@ -1,0 +1,40 @@
+[
+  {
+    "usage": {
+      "input_tokens": 1509,
+      "output_tokens": 132,
+      "embedding_tokens": 0,
+      "llm_calls": 1,
+      "embedding_calls": 0,
+      "missing_usage": 0
+    },
+    "actual_tools": [],
+    "expected_tools": [],
+    "observations": [],
+    "id": "EB001",
+    "category": "general_knowledge",
+    "query": "什么是供应链风险？",
+    "expected_routing": "DIRECT_RESPONSE",
+    "actual_routing": "DIRECT_RESPONSE",
+    "routing_correct": true,
+    "expected_tool": null,
+    "actual_tool": null,
+    "tool_correct": true,
+    "expected_arguments": {},
+    "actual_arguments": {},
+    "argument_score": 1.0,
+    "expected_status": null,
+    "actual_tool_status": null,
+    "status_correct": true,
+    "task_correct": true,
+    "llm_calls": 1,
+    "tool_calls": 0,
+    "input_tokens": 1509,
+    "output_tokens": 132,
+    "total_tokens": 1641,
+    "latency_ms": 7378.080700000282,
+    "agent_success": true,
+    "answer": "供应链风险是指在采购、生产、物流、交付等供应链各环节中，因外部环境变化（如地缘政治、自然灾害、疫情）、内部管理缺陷（如供应商资质不足、合同条款不严）、或运营异常（如交付延迟、质量不合格、付款违约）等因素，可能导致企业无法按时、按质、按成本履行订单，进而影响业务连续性、财务表现和合规状态的不确定性。\n\n该定义符合企业《供应链风险管理政策》第2.1条对“供应链风险”的标准界定。如需了解具体风险类型、分级标准或应对流程，我可为您检索相关企业政策条款。",
+    "error": null
+  }
+]

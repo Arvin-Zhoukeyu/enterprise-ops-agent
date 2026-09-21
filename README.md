@@ -185,11 +185,13 @@ flowchart TD
 ## Evaluation
 
 All evaluation labels live in one synthetic benchmark file:
-`evaluation/dataset.json`. The benchmark contains 110 unique cases:
+`evaluation/dataset.json`. The benchmark contains 170 unique synthetic cases:
 
 - 60 common cases executed by both Baseline and Workflow for a fair comparison
 - 30 Workflow extension cases covering multi-tool, RBAC and approval behavior
 - 20 policy retrieval cases with expected source documents
+- 48 risk-rule boundary cases using isolated database fixtures
+- 12 permission/approval cases verifying real writes in isolated SQLite
 
 Rebuild the unified dataset after editing its generator:
 
@@ -204,9 +206,17 @@ python -m scripts.run_evaluation
 ```
 
 The command prints all metrics to the terminal and writes the consolidated
-report to `outputs/evaluation/summary.json`. Detailed results are grouped under
-the same output directory. Metrics include strict task completion, routing,
+report to a new `outputs/evaluation/runs/<run_id>/summary.json`. Detailed results are grouped under
+the same run directory. Metrics include process-contract completion, routing,
 exact tool sequence, argument matching, tool precision/recall/F1,
 security-control accuracy, RAG Hit@K/MRR/Recall@K, latency percentiles and model
 usage. Synthetic labels are expected results; all reported scores come from
 actual evaluator runs.
+
+AI PM product metrics, human review, cost configuration and iteration comparison
+are documented in [the product evaluation guide](docs/product-evaluation.md).
+Run `python -m scripts.run_evaluation --suite business` for offline integration
+checks without an API key or PostgreSQL. Full model evaluation still requires
+Bailian and an initialized database/knowledge index. After this upgrade, rebuild
+the knowledge base for policy version 2026.2. Human efficiency, answer quality
+and satisfaction remain unmeasured until actual review/trial records are entered.

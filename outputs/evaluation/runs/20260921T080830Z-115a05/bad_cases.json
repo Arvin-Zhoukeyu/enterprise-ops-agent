@@ -1,0 +1,23 @@
+[
+  {
+    "agent": "baseline_common",
+    "id": "EB001",
+    "query": "什么是供应链风险？",
+    "failures": [
+      "execution_error",
+      "routing"
+    ],
+    "error": "Connection error.",
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_common",
+    "id": "EB001",
+    "query": "什么是供应链风险？",
+    "failures": [
+      "execution_error"
+    ],
+    "error": "Connection error.",
+    "feedback": ""
+  }
+]

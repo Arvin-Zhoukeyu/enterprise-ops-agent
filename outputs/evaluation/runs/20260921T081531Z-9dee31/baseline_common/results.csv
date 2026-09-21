@@ -1,0 +1,25 @@
+﻿usage,actual_tools,expected_tools,observations,id,category,query,expected_routing,actual_routing,routing_correct,expected_tool,actual_tool,tool_correct,expected_arguments,actual_arguments,argument_score,expected_status,actual_tool_status,status_correct,task_correct,llm_calls,tool_calls,input_tokens,output_tokens,total_tokens,latency_ms,agent_success,answer,error
+"{'input_tokens': 1509, 'output_tokens': 234, 'embedding_tokens': 0, 'llm_calls': 1, 'embedding_calls': 0, 'missing_usage': 0}",[],[],[],EB001,general_knowledge,什么是供应链风险？,DIRECT_RESPONSE,DIRECT_RESPONSE,True,,,True,{},{},1.0,,,True,True,1,0,1509,234,1743,7767.519199987873,True,"供应链风险是指在采购、生产、物流、交付等供应链各环节中，因内外部不确定性因素（如供应商违约、自然灾害、地缘政治、质量缺陷、交付延迟、付款异常、合规问题等）导致企业无法按计划获取物料、服务或完成订单，进而影响运营连续性、成本控制、客户满意度或财务表现的潜在威胁。
+
+它通常涵盖以下维度：
+- **供应商风险**：资质失效、财务恶化、屡次延迟、质量不达标、集中度高；
+- **运营风险**：物流中断、库存失衡、单点故障、系统依赖；
+- **合规与地缘风险**：出口管制、制裁、ESG违规、数据安全要求；
+- **财务风险**：汇率波动、付款欺诈、账期错配、隐性成本上升。
+
+企业通过供应商准入评估、动态风险评级、关键物料替代分析、合同条款约束及实时风险事件监控等方式进行管理。
+
+如需了解我司《供应链风险管理政策》具体条款（如风险等级定义、响应阈值、升级机制），我可为您检索内部政策文档。是否需要？",
+"{'input_tokens': 1512, 'output_tokens': 287, 'embedding_tokens': 0, 'llm_calls': 1, 'embedding_calls': 0, 'missing_usage': 0}",[],[],[],EB002,general_knowledge,采购订单通常包含哪些信息？,DIRECT_RESPONSE,DIRECT_RESPONSE,True,,,True,{},{},1.0,,,True,True,1,0,1512,287,1799,7326.136799994856,True,"采购订单（Purchase Order, PO）是企业向供应商发出的正式采购请求文件，通常包含以下核心信息：
+
+- 订单编号（PO Number）：唯一标识该采购订单的业务编号  
+- 日期：创建日期、要求交付日期（承诺交期）  
+- 买方信息：公司名称、地址、联系人、采购部门等  
+- 供应商信息：名称、代码（如 SUP-2026-0003）、地址、联系人  
+- 物料/服务明细：品名、规格、数量、单价、币种、总金额（含税/不含税）  
+- 付款条款：账期（如 Net 30）、付款方式（电汇、信用证等）  
+- 交付条款：交货地点、运输方式、Incoterms（如 FOB、DDP）  
+- 验收与质量要求：验收标准、质检要求、文档要求（如 COA、原产地证）  
+- 审批信息：采购员、部门负责人、财务等审批签字或系统留痕  
+
+这些字段可能因企业ERP系统（如SAP、Oracle）或行业惯例略有差异。如需查看某张具体订单的结构化内容，请提供订单号（例如 PO-2026-000123），我可为您实时查询。",

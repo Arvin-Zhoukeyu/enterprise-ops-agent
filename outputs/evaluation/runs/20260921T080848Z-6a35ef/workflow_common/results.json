@@ -1,0 +1,38 @@
+[
+  {
+    "id": "EB001",
+    "query": "什么是供应链风险？",
+    "answer": "供应链风险是指企业在采购、生产、物流、交付等供应链各环节中，因内部或外部不确定性因素（如供应商破产、地缘政治冲突、自然灾害、网络攻击、质量缺陷、合规违规、需求突变、运输中断等）导致供应中断、成本上升、交付延迟、声誉受损或业务连续性受挫的可能性与潜在影响。其核心在于**供应稳定性、韧性与可控性**的缺失。",
+    "observations": [],
+    "pending_action": null,
+    "argument_score": 1.0,
+    "usage": {
+      "input_tokens": 133,
+      "output_tokens": 110,
+      "embedding_tokens": 0,
+      "llm_calls": 2,
+      "embedding_calls": 0,
+      "missing_usage": 0
+    },
+    "category": "general_knowledge",
+    "execution_success": true,
+    "task_correct": true,
+    "latency_ms": 5835.964399971999,
+    "expected_route": "DIRECT_RESPONSE",
+    "actual_route": "DIRECT_RESPONSE",
+    "route_correct": true,
+    "expected_tools": [],
+    "actual_tools": [],
+    "tool_match": true,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "expected_security_status": null,
+    "actual_security_status": null,
+    "security_correct": true,
+    "verification_status": "",
+    "verification_correct": true,
+    "replan_count": 0,
+    "error": null
+  }
+]

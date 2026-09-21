@@ -15,6 +15,8 @@ def create_bailian_client() -> OpenAI:
     return OpenAI(
         api_key=settings.dashscope_api_key,
         base_url=settings.dashscope_base_url,
+        timeout=60.0,
+        max_retries=1,
     )
 
 

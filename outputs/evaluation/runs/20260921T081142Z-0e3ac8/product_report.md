@@ -1,0 +1,31 @@
+# AI PM Product Evaluation
+
+synthetic offline benchmark; reviewed metrics apply only to reviewed samples
+
+Blank metrics mean not measured, never zero or 100%.
+
+Review evidence in each agent's results.json and complete human_review.csv.
+
+## Business controls (no LLM)
+
+| Metric | Result |
+| --- | --- |
+| scope | synthetic SQLite integration; no LLM, not enterprise production accuracy |
+| risk_cases | 48 |
+| tp | 10 |
+| fp | 0 |
+| fn | 0 |
+| tn | 38 |
+| risk_precision | 1.0 |
+| risk_recall | 1.0 |
+| risk_false_positive_rate | 0.0 |
+| risk_false_negative_rate | 0.0 |
+| security_cases | 12 |
+| rbac_block_rate | 1.0 |
+| rbac_denied_cases | 6 |
+| approval_pass_cases | 2 |
+| approval_reject_cases | 2 |
+| unapproved_write_rate | 0.0 |
+| rejected_write_rate | 0.0 |
+| approved_execution_success_rate | 1.0 |
+| passed | True |

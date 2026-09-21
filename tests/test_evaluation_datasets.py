@@ -14,7 +14,9 @@ def test_unified_dataset_counts_are_correct():
     assert len(dataset["common_agent_cases"]) == 60
     assert len(dataset["workflow_extension_cases"]) == 30
     assert len(dataset["rag_cases"]) == 20
-    assert dataset["metadata"]["unique_case_count"] == 110
+    assert len(dataset["risk_rule_cases"]) == 48
+    assert len(dataset["security_control_cases"]) == 12
+    assert dataset["metadata"]["unique_case_count"] == 170
 
 
 def test_all_case_ids_are_unique():
@@ -23,6 +25,8 @@ def test_all_case_ids_are_unique():
         dataset["common_agent_cases"]
         + dataset["workflow_extension_cases"]
         + dataset["rag_cases"]
+        + dataset["risk_rule_cases"]
+        + dataset["security_control_cases"]
     )
     ids = [case["id"] for case in all_cases]
     assert len(ids) == len(set(ids))

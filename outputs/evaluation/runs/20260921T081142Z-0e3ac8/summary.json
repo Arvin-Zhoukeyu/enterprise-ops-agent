@@ -1,0 +1,78 @@
+{
+  "dataset": {
+    "path": "outputs\\evaluation\\runs\\20260921T081142Z-0e3ac8\\dataset.json",
+    "unique_cases": 170,
+    "sha256": "13bd94e7b88a9d18deae224d0e3e89acec32947166e36e3eb3c5bc89152295b3",
+    "counts": {
+      "common_agent_cases": 60,
+      "workflow_extension_cases": 30,
+      "rag_cases": 20,
+      "risk_rule_cases": 48,
+      "security_control_cases": 12
+    },
+    "source": "synthetic"
+  },
+  "prices": null,
+  "run": {
+    "directory": "outputs\\evaluation\\runs\\20260921T081142Z-0e3ac8",
+    "git_revision": "a532fe55cc82d0b843ede67b1d65bac3e2578982",
+    "source_sha256": "09c112727e29d84fa24546d47013e7a90d956899c5b52ba09a6a60d1ecb6c1c7",
+    "chat_model": "qwen-plus",
+    "embedding_model": "text-embedding-v4",
+    "rule_version": "2026.2",
+    "suite": "business",
+    "limit": null
+  },
+  "business_controls": {
+    "scope": "synthetic SQLite integration; no LLM, not enterprise production accuracy",
+    "risk_cases": 48,
+    "tp": 10,
+    "fp": 0,
+    "fn": 0,
+    "tn": 38,
+    "risk_precision": 1.0,
+    "risk_recall": 1.0,
+    "risk_false_positive_rate": 0.0,
+    "risk_false_negative_rate": 0.0,
+    "security_cases": 12,
+    "rbac_block_rate": 1.0,
+    "rbac_denied_cases": 6,
+    "approval_pass_cases": 2,
+    "approval_reject_cases": 2,
+    "unapproved_write_rate": 0.0,
+    "rejected_write_rate": 0.0,
+    "approved_execution_success_rate": 1.0,
+    "passed": true
+  },
+  "product": {
+    "scope": "synthetic offline benchmark; reviewed metrics apply only to reviewed samples",
+    "prices_cny_per_million_tokens": null,
+    "cost_scope": "estimate from observed API usage, excludes hosting, KB ingestion and unreported retry usage",
+    "agents": {},
+    "business_controls": {
+      "scope": "synthetic SQLite integration; no LLM, not enterprise production accuracy",
+      "risk_cases": 48,
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "tn": 38,
+      "risk_precision": 1.0,
+      "risk_recall": 1.0,
+      "risk_false_positive_rate": 0.0,
+      "risk_false_negative_rate": 0.0,
+      "security_cases": 12,
+      "rbac_block_rate": 1.0,
+      "rbac_denied_cases": 6,
+      "approval_pass_cases": 2,
+      "approval_reject_cases": 2,
+      "unapproved_write_rate": 0.0,
+      "rejected_write_rate": 0.0,
+      "approved_execution_success_rate": 1.0,
+      "passed": true
+    }
+  },
+  "executed_case_counts": {
+    "risk_rules": 48,
+    "security_controls": 12
+  }
+}

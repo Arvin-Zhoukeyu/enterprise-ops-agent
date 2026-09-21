@@ -1,0 +1,201 @@
+[
+  {
+    "agent": "baseline_common",
+    "id": "EB036",
+    "query": "查询最近20条高风险事件",
+    "failures": [
+      "arguments"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "baseline_common",
+    "id": "EB048",
+    "query": "筛选近90天金额5万元以上且延期5天的订单，最多8条",
+    "failures": [
+      "arguments"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "baseline_common",
+    "id": "EB053",
+    "query": "返回近3650天金额100万元以上、延期20天、历史延期5次的订单，最多20条",
+    "failures": [
+      "arguments"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_common",
+    "id": "EB041",
+    "query": "查看3条低风险事件",
+    "failures": [
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_common",
+    "id": "EB042",
+    "query": "列出7条高风险付款失败事件",
+    "failures": [
+      "tool_selection",
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_common",
+    "id": "EB047",
+    "query": "查近180天金额20万元以上、延期10天、历史延期3次的高风险订单，返回10条",
+    "failures": [
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_common",
+    "id": "EB048",
+    "query": "筛选近90天金额5万元以上且延期5天的订单，最多8条",
+    "failures": [
+      "arguments"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_common",
+    "id": "EB049",
+    "query": "查询近30天金额至少30万元、延期15天、历史延期4次的订单，返回6条",
+    "failures": [
+      "tool_selection",
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_common",
+    "id": "EB056",
+    "query": "为风险事件2创建工单，标题为Review payment failure，描述为Finance team should review this payment failure，优先级为critical",
+    "failures": [
+      "tool_selection"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW013",
+    "query": "根据企业政策，延期多少天属于重大交付延期？",
+    "failures": [
+      "routing",
+      "tool_selection",
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW014",
+    "query": "公司政策如何定义高价值采购？",
+    "failures": [
+      "routing",
+      "tool_selection",
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW015",
+    "query": "按照内部制度，哪些采购需要经理审核？",
+    "failures": [
+      "routing",
+      "tool_selection",
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW023",
+    "query": "查询10条付款失败事件，并结合企业风险政策判断是否需要升级",
+    "failures": [
+      "insufficient_evidence"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW025",
+    "query": "为风险事件1创建高优先级调查工单",
+    "failures": [
+      "tool_selection"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW026",
+    "query": "为风险事件2创建严重级别调查工单",
+    "failures": [
+      "tool_selection",
+      "security"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW027",
+    "query": "为风险事件3创建中优先级风险工单",
+    "failures": [
+      "tool_selection"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW028",
+    "query": "为风险事件1创建高优先级调查工单",
+    "failures": [
+      "tool_selection"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW029",
+    "query": "为风险事件2创建严重优先级调查工单",
+    "failures": [
+      "tool_selection"
+    ],
+    "error": null,
+    "feedback": ""
+  },
+  {
+    "agent": "workflow_extension",
+    "id": "EW030",
+    "query": "为风险事件3创建中优先级调查工单",
+    "failures": [
+      "tool_selection"
+    ],
+    "error": null,
+    "feedback": ""
+  }
+]

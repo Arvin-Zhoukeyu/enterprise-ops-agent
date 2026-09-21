@@ -10,6 +10,7 @@ from app.agents.workflow.state import (
     AgentState,
 )
 from app.core.config import settings
+from app.observability.usage import record_usage
 from app.llm import (
     create_bailian_client,
     get_chat_text,
@@ -31,17 +32,13 @@ load_tools()
 
 
 def _complete(prompt: str) -> str:
-    client = create_bailian_client()
-    response = client.chat.completions.create(
-        model=settings.dashscope_chat_model,
-        messages=[
-            {
-                "role": "user",
-                "content": prompt,
-            }
-        ],
-        temperature=0,
-    )
+    with create_bailian_client() as client:
+        response = client.chat.completions.create(
+            model=settings.dashscope_chat_model,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0,
+        )
+    record_usage(response.usage)
     return get_chat_text(response)
 
 def router_node(
@@ -736,7 +733,7 @@ def approval_node(
         )
     )
 
-    if not approved:
+    if approved is not True:
 
         return {
             "approval_status":
@@ -809,15 +806,13 @@ def execute_approved_action_node(
         }
 
     try:
-
-        result = (
-            tool_registry.execute(
-                pending["tool"],
-                pending["arguments"],
-            )
-        )
-
-        status = "SUCCESS"
+        tool = tool_registry.get(pending["tool"])
+        if not has_permission(state["user_role"], tool.permission):
+            result = {"success": False, "error": "permission_denied"}
+            status = "PERMISSION_DENIED"
+        else:
+            result = tool_registry.execute(pending["tool"], pending["arguments"])
+            status = "FAILED" if isinstance(result, dict) and result.get("success") is False else "SUCCESS"
 
     except Exception as exc:
 
